@@ -6,14 +6,13 @@ import ProductOffer from "@/components/ProductOffer";
 import SurveyHeader from "@/components/SurveyHeader";
 import { useToast } from "@/components/ui/use-toast";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import IPhoneImageFetcher from "@/components/IPhoneImageFetcher";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Skeleton } from "@/components/ui/skeleton";
 
-// Define new main image path for the Costco gift card
+// Define main image path for the Costco gift card
 const COSTCO_GIFT_CARD_IMAGE = "/lovable-uploads/90aa05f7-e6fa-4638-858e-dbd4f05050f0.png";
 
-// External placeholder images with low quality (keeping as fallbacks)
+// External placeholder images with lower quality and optimized size
 const PLACEHOLDER_IMAGES = [
   "https://images.unsplash.com/photo-1498936178812-4b2e558d2937?auto=format&q=50&w=240", // Low quality, smaller size
   "https://images.unsplash.com/photo-1469041797191-50ace28483c3?auto=format&q=50&w=240"  // Low quality, smaller size
@@ -27,22 +26,23 @@ const Results = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const isMobile = useIsMobile();
 
-  // Pre-load the gift card image immediately when component mounts
+  // Improved image loading with immediate initialization and shorter timeout
   useEffect(() => {
-    // Start loading the gift card image
+    // Pre-load the image when component mounts
     const img = new Image();
     
     img.onload = () => {
       setImageLoaded(true);
     };
     
-    // Set src after attaching onload handlers
+    // Set loading priority and src after attaching onload handler
+    img.fetchPriority = "high";
     img.src = COSTCO_GIFT_CARD_IMAGE;
     
-    // Mark as loaded after a short timeout to avoid waiting too long
+    // Shorter timeout for faster display fallback
     const timeout = setTimeout(() => {
       setImageLoaded(true);
-    }, 800); // Short timeout for faster display
+    }, 600); // Even shorter timeout for faster display
     
     return () => clearTimeout(timeout);
   }, []);
@@ -77,18 +77,16 @@ const Results = () => {
                       alt="Costco $500 Gift Card" 
                       className="rounded-md object-contain w-full h-full" 
                       loading="eager"
-                      width="300"
-                      height="169"
+                      width={isMobile ? "280" : "300"}
+                      height={isMobile ? "158" : "169"}
                       fetchPriority="high"
                       crossOrigin="anonymous"
                       decoding="async"
                       onLoad={() => setImageLoaded(true)}
                       onError={() => {
                         // If error, try placeholder image
-                        const imgPlaceholder = document.createElement('img');
-                        imgPlaceholder.onload = () => setImageLoaded(true);
-                        imgPlaceholder.src = PLACEHOLDER_IMAGES[0];
                         setGiftCardImage(PLACEHOLDER_IMAGES[0]);
+                        setImageLoaded(true);
                       }}
                     />
                   )}
@@ -96,15 +94,15 @@ const Results = () => {
               </div>
             </div>
             
-            {/* Blue promotional text */}
-            <div className="text-center px-3 py-2 bg-blue-50 rounded-lg border border-blue-100">
-              <p className="text-blue-600 font-medium text-sm">
+            {/* Blue promotional text - improved mobile padding */}
+            <div className="text-center px-2 py-2 bg-blue-50 rounded-lg border border-blue-100">
+              <p className={`text-blue-600 font-medium ${isMobile ? 'text-sm' : 'text-base'}`}>
                 Upgrade your inventory and Cash in! A Costco $500 Gift Card when you reach the end of the survey!
               </p>
             </div>
           </div>
           
-          {/* Fixed CTA button for mobile */}
+          {/* Improved CTA button for mobile with sticky positioning */}
           <div className={isMobile ? "sticky bottom-4 z-10 mt-4" : ""}>
             <a 
               href="https://glstrck.com/aff_c?offer_id=941&aff_id=25969" 
@@ -120,7 +118,7 @@ const Results = () => {
             </a>
           </div>
           
-          <p className="text-sm text-center text-gray-500 mt-4 pb-16">
+          <p className={`text-sm text-center text-gray-500 mt-4 ${isMobile ? 'pb-20' : 'pb-16'}`}>
             Limited time offer. Your reward is reserved for the time shown in the timer.
           </p>
         </>

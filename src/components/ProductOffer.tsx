@@ -1,79 +1,71 @@
+
 import { Button } from "@/components/ui/button";
 import Timer from "@/components/Timer";
 import { Check } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface ProductOfferProps {
   onClaim: () => void;
 }
 
-// Define guaranteed working fallback image with quality parameter
+// Define guaranteed working fallback image
 const COSTCO_GIFT_CARD_IMAGE = "/lovable-uploads/90aa05f7-e6fa-4638-858e-dbd4f05050f0.png";
-// Additional fallback from Unsplash with optimized load time
+// Additional fallback from Unsplash with optimized load time parameters
 const UNSPLASH_FALLBACK = "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&q=50&w=300";
 
 const ProductOffer = ({ onClaim }: ProductOfferProps) => {
   const [imageLoaded, setImageLoaded] = useState(false);
+  const isMobile = useIsMobile();
   
-  // Preload the fallback image immediately on component mount
+  // Enhanced image preloading with faster display
   useEffect(() => {
-    // Try loading both fallback options
-    const unsplashFallback = new Image();
-    unsplashFallback.src = UNSPLASH_FALLBACK;
-    
     const img = new Image();
     img.onload = () => setImageLoaded(true);
+    img.fetchPriority = "high";
     img.src = COSTCO_GIFT_CARD_IMAGE;
     
-    // Set a shorter timeout for faster display
+    // Shorter timeout for faster display
     const timeout = setTimeout(() => {
       setImageLoaded(true);
-    }, 1000); // Reduced from 2000ms to 1000ms
+    }, 600); // Reduced from 1000ms to 600ms
     
     return () => clearTimeout(timeout);
   }, []);
   
   return (
-    <div className="border border-gray-200 rounded-lg shadow-lg p-6 max-w-md mx-auto bg-white">
+    <div className="border border-gray-200 rounded-lg shadow-lg p-4 sm:p-6 max-w-md mx-auto bg-white">
       <div className="text-center mb-4">
         <h3 className="text-xl font-bold text-gray-900">Congratulations!</h3>
         <p className="text-red-600 font-medium">You've qualified for our special Costco offer!</p>
       </div>
 
       <div className="mb-6">
-        {/* Display the selected image with optimizations */}
-        <div className="w-full h-48 relative rounded-md overflow-hidden">
+        {/* Mobile-optimized image display with faster loading */}
+        <div className="w-full h-40 sm:h-48 relative rounded-md overflow-hidden">
           {!imageLoaded ? (
             <Skeleton className="w-full h-full absolute inset-0 rounded-md" />
           ) : null}
           <img 
             src={COSTCO_GIFT_CARD_IMAGE} 
             alt="Costco $500 Gift Card" 
-            className={`w-full h-48 object-cover rounded-md ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
-            style={{ transition: 'opacity 0.2s' }} // Faster transition
-            width="300"
-            height="192"
+            className={`w-full h-full object-contain rounded-md ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+            style={{ transition: 'opacity 0.1s' }} // Faster transition
+            width={isMobile ? "280" : "300"}
+            height={isMobile ? "160" : "192"}
             loading="eager"
             fetchPriority="high"
             crossOrigin="anonymous"
             decoding="async"
             onLoad={() => setImageLoaded(true)}
             onError={() => {
-              // Try Unsplash fallback
-              const unsplashFallback = new Image();
-              unsplashFallback.onload = () => {
-                const img = document.querySelector('img') as HTMLImageElement;
-                if (img) {
-                  img.src = UNSPLASH_FALLBACK;
-                  setImageLoaded(true);
-                }
-              };
-              unsplashFallback.onerror = () => {
-                // If Unsplash fails too, just mark as loaded
+              // Fall back to Unsplash image
+              const fallbackImg = document.querySelector('img') as HTMLImageElement;
+              if (fallbackImg) {
+                fallbackImg.src = UNSPLASH_FALLBACK;
                 setImageLoaded(true);
-              };
-              unsplashFallback.src = UNSPLASH_FALLBACK;
+              }
             }}
           />
         </div>
@@ -82,15 +74,15 @@ const ProductOffer = ({ onClaim }: ProductOfferProps) => {
       <div className="mb-6">
         <h4 className="font-bold text-lg mb-2">Costco $500 Gift Card</h4>
         <div className="flex items-center mb-1">
-          <Check className="h-4 w-4 text-red-500 mr-2" />
+          <Check className="h-4 w-4 text-red-500 mr-2 flex-shrink-0" />
           <span className="text-gray-700">Valid at any Costco location</span>
         </div>
         <div className="flex items-center mb-1">
-          <Check className="h-4 w-4 text-red-500 mr-2" />
+          <Check className="h-4 w-4 text-red-500 mr-2 flex-shrink-0" />
           <span className="text-gray-700">Shop groceries, electronics, and more</span>
         </div>
         <div className="flex items-center mb-1">
-          <Check className="h-4 w-4 text-red-500 mr-2" />
+          <Check className="h-4 w-4 text-red-500 mr-2 flex-shrink-0" />
           <span className="text-gray-700">No expiration date</span>
         </div>
       </div>
@@ -107,7 +99,7 @@ const ProductOffer = ({ onClaim }: ProductOfferProps) => {
 
       <Button 
         onClick={onClaim} 
-        className="w-full py-6 text-lg bg-red-600 hover:bg-red-700"
+        className={`w-full py-6 text-lg bg-red-600 hover:bg-red-700 ${isMobile ? 'mt-4' : 'mt-2'}`}
       >
         CLAIM NOW
       </Button>
