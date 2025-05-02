@@ -10,7 +10,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { Skeleton } from "@/components/ui/skeleton";
 
 // Define main image path for the Dollar Tree gift card
-const DOLLAR_TREE_GIFT_CARD_IMAGE = "/lovable-uploads/158b4b58-6556-4d70-a55e-c1f05b67aa70.png";
+const DOLLAR_TREE_GIFT_CARD_IMAGE = "/lovable-uploads/39ce19a4-ca1e-49e7-865f-6bd020b9c9af.png";
 
 // External placeholder images with lower quality and optimized size
 const PLACEHOLDER_IMAGES = [

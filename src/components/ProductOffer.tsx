@@ -11,7 +11,7 @@ interface ProductOfferProps {
 }
 
 // Define guaranteed working fallback image
-const DOLLAR_TREE_GIFT_CARD_IMAGE = "/lovable-uploads/90aa05f7-e6fa-4638-858e-dbd4f05050f0.png";
+const DOLLAR_TREE_GIFT_CARD_IMAGE = "/lovable-uploads/39ce19a4-ca1e-49e7-865f-6bd020b9c9af.png";
 // Additional fallback from Unsplash with optimized load time parameters
 const UNSPLASH_FALLBACK = "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&q=50&w=300";
 
