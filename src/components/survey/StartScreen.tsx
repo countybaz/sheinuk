@@ -4,6 +4,7 @@ import SurveyHeader from "@/components/SurveyHeader";
 import { useSurvey } from "@/contexts/SurveyContext";
 import { ArrowRight } from "lucide-react";
 import FacebookReviews from "@/components/FacebookReviews";
+
 const StartScreen = () => {
   const {
     goToNextStep
@@ -20,7 +21,7 @@ const StartScreen = () => {
         </p>
         
         <p className="text-center mb-6">
-          Join thousands of satisfied customers who've already received their rewards. It only takes 5 minutes!
+          Ready to take your grocery's too the next level? Click the <span className="text-blue-800 font-semibold">Start</span> button below
         </p>
         
         <p className="text-sm text-red-600 text-center font-medium mb-6">
