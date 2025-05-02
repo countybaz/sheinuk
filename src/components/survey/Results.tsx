@@ -10,7 +10,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { Skeleton } from "@/components/ui/skeleton";
 
 // Define main image path for the Dollar Tree gift card
-const DOLLAR_TREE_GIFT_CARD_IMAGE = "/lovable-uploads/90aa05f7-e6fa-4638-858e-dbd4f05050f0.png";
+const DOLLAR_TREE_GIFT_CARD_IMAGE = "/lovable-uploads/158b4b58-6556-4d70-a55e-c1f05b67aa70.png";
 
 // External placeholder images with lower quality and optimized size
 const PLACEHOLDER_IMAGES = [
@@ -102,10 +102,10 @@ const Results = () => {
             </div>
           </div>
           
-          {/* Improved CTA button for mobile with sticky positioning */}
+          {/* Improved CTA button for mobile with sticky positioning and updated URL */}
           <div className={isMobile ? "sticky bottom-4 z-10 mt-4" : ""}>
             <a 
-              href="https://glstrck.com/aff_c?offer_id=941&aff_id=25969" 
+              href="https://unlockrwrd.com/l37ECYyFM" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="block w-full"
