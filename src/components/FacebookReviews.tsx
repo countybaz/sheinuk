@@ -25,7 +25,6 @@ const FALLBACK_IMAGE = "/lovable-uploads/73921274-7afe-4bc3-9ae2-83873c2f871a.pn
 
 // Define the Ultimate Costco Program logo from the header
 const COSTCO_PROGRAM_LOGO = "/lovable-uploads/cc3d59e8-7972-4b76-ae45-1ab372980923.png";
-
 const FacebookReviews = () => {
   const [showAllReviews, setShowAllReviews] = useState(false);
   const [sortOption, setSortOption] = useState<SortOption>("newest");
@@ -45,7 +44,7 @@ const FacebookReviews = () => {
   useEffect(() => {
     const img = new Image();
     img.src = FALLBACK_IMAGE;
-    
+
     // Also preload the program logo
     const logoImg = new Image();
     logoImg.src = COSTCO_PROGRAM_LOGO;
@@ -143,9 +142,9 @@ const FacebookReviews = () => {
     comments: 6,
     images: []
   }];
-  
+
   // ... keep existing code (time conversion functions and sorting logic)
-  
+
   useEffect(() => {
     // Initialize reviews sorted by newest on first load
     const timeOrder = convertTimeStringsToOrder(allReviews);
@@ -220,9 +219,9 @@ const FacebookReviews = () => {
     });
     return timeOrder;
   };
-  
+
   // ... keep existing code (refreshComments, handleImagesFetched, handleImageLoad, handleImageError, getSortedReviews functions)
-  
+
   const refreshComments = () => {
     // Set sort option to newest and sort reviews by newest
     setSortOption("newest");
@@ -233,7 +232,6 @@ const FacebookReviews = () => {
     const randomReviews = getRandomIndices(allReviews.length, 3);
     setReviewsWithReplies(randomReviews);
   };
-  
   const handleImagesFetched = (images: Array<{
     src: string;
     alt: string;
@@ -274,22 +272,12 @@ const FacebookReviews = () => {
         return [...displayedReviewsData].sort((a, b) => timeOrder[a.time] !== undefined && timeOrder[b.time] !== undefined ? timeOrder[a.time] - timeOrder[b.time] : 0);
     }
   };
-  
   const sortedReviews = getSortedReviews();
   const displayedReviews = showAllReviews ? sortedReviews : sortedReviews.slice(0, 5);
 
   // Get a unique response for a specific review - Updated for Costco Gift Card
   const getUniqueResponse = (index: number, reviewName: string) => {
-    const responses = [
-      `Thanks for sharing your experience, ${reviewName}! 😊 We're thrilled you're enjoying your Costco Gift Card. Our team works hard to make processing as fast as possible!`,
-      `We really appreciate your feedback, ${reviewName}! The $500 Costco Gift Card is indeed a fantastic reward, and we're delighted it arrived in perfect condition.`,
-      `Thank you so much for your kind words, ${reviewName}! We're committed to making this program accessible to everyone who qualifies. Enjoy all the amazing products at Costco!`,
-      `We're so glad to hear about your positive experience, ${reviewName}! Our goal is to make the survey process as simple as possible. Thank you for being part of our program!`,
-      `Your satisfaction means everything to us, ${reviewName}! We're happy that the Costco Gift Card meets your expectations. Don't hesitate to reach out if you have any questions!`,
-      `Thanks for trusting our program, ${reviewName}! Many people are skeptical at first, but we're dedicated to delivering quality rewards to all our qualified participants.`,
-      `We love hearing success stories like yours, ${reviewName}! Costco has so many great products to choose from. Thanks for sharing your experience with our community!`,
-      `Thank you for your wonderful feedback, ${reviewName}! We're glad the process was smooth and you're enjoying your Gift Card. That's exactly what we aim for!`
-    ];
+    const responses = [`Thanks for sharing your experience, ${reviewName}! 😊 We're thrilled you're enjoying your Costco Gift Card. Our team works hard to make processing as fast as possible!`, `We really appreciate your feedback, ${reviewName}! The $500 Costco Gift Card is indeed a fantastic reward, and we're delighted it arrived in perfect condition.`, `Thank you so much for your kind words, ${reviewName}! We're committed to making this program accessible to everyone who qualifies. Enjoy all the amazing products at Costco!`, `We're so glad to hear about your positive experience, ${reviewName}! Our goal is to make the survey process as simple as possible. Thank you for being part of our program!`, `Your satisfaction means everything to us, ${reviewName}! We're happy that the Costco Gift Card meets your expectations. Don't hesitate to reach out if you have any questions!`, `Thanks for trusting our program, ${reviewName}! Many people are skeptical at first, but we're dedicated to delivering quality rewards to all our qualified participants.`, `We love hearing success stories like yours, ${reviewName}! Costco has so many great products to choose from. Thanks for sharing your experience with our community!`, `Thank you for your wonderful feedback, ${reviewName}! We're glad the process was smooth and you're enjoying your Gift Card. That's exactly what we aim for!`];
 
     // Use modulo to cycle through responses if there are more reviews than responses
     return responses[index % responses.length];
@@ -300,9 +288,7 @@ const FacebookReviews = () => {
     const times = ['1h ago', '3h ago', '5h ago', '1d ago', '2d ago', '3d ago'];
     return times[index % times.length];
   };
-  
-  return (
-    <div className="mt-8 bg-white rounded-lg shadow-md p-4">
+  return <div className="mt-8 bg-white rounded-lg shadow-md p-4">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center">
           <div className="w-8 h-8 bg-[#3b5998] rounded-full flex items-center justify-center">
@@ -346,8 +332,7 @@ const FacebookReviews = () => {
       <Separator className="mb-4" />
 
       {/* Display sorted reviews */}
-      {displayedReviews.map((review, index) => (
-        <div className="mb-4" key={index}>
+      {displayedReviews.map((review, index) => <div className="mb-4" key={index}>
           <div className="flex items-start">
             <img src={review.avatar} alt="User" className="w-8 h-8 rounded-full mr-2" loading="eager" onError={handleImageError} />
             <div className="flex-1">
@@ -358,22 +343,7 @@ const FacebookReviews = () => {
               <p className="text-sm mt-1">{review.text}</p>
               
               {/* Images if any */}
-              {review.images.length > 0 && (
-                <div className="mt-2 flex">
-                  {review.images.map((img, imgIndex) => (
-                    <div key={imgIndex} className="w-16 h-16 mr-2 rounded-md overflow-hidden">
-                      <img 
-                        src={img} 
-                        alt="Costco Gift Card" 
-                        className="object-cover w-full h-full"
-                        loading="lazy"
-                        onLoad={() => handleImageLoad(img)}
-                        onError={handleImageError}
-                      />
-                    </div>
-                  ))}
-                </div>
-              )}
+              {review.images.length > 0}
               
               <div className="flex items-center mt-1 text-xs text-gray-500">
                 <ThumbsUp className="w-3 h-3 mr-1" /> {review.likes}
@@ -383,8 +353,7 @@ const FacebookReviews = () => {
           </div>
           
           {/* Ultimate Costco Program Replies - only show for randomly selected reviews */}
-          {reviewsWithReplies.includes(index) && (
-            <div className="ml-10 mt-2 border-l-2 border-gray-200 pl-3">
+          {reviewsWithReplies.includes(index) && <div className="ml-10 mt-2 border-l-2 border-gray-200 pl-3">
               <div className="flex items-start">
                 <div className="relative">
                   <Avatar className="w-6 h-6 mr-2">
@@ -410,10 +379,8 @@ const FacebookReviews = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          )}
-        </div>
-      ))}
+            </div>}
+        </div>)}
 
       {/* Show more link */}
       <div className="text-center mt-2">
@@ -421,8 +388,6 @@ const FacebookReviews = () => {
           {showAllReviews ? 'Show less reviews' : 'Show more reviews'}
         </button>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default FacebookReviews;
