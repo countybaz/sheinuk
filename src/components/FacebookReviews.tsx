@@ -20,11 +20,12 @@ type Review = {
 // Define sort types
 type SortOption = "newest" | "most-likes" | "most-comments";
 
-// Define fallback image to use when image loading fails - Use the same image as in Results.tsx
+// Define fallback image to use when image loading fails
 const FALLBACK_IMAGE = "/lovable-uploads/73921274-7afe-4bc3-9ae2-83873c2f871a.png?q=30&w=300";
 
-// Define the Ultimate Costco Program logo from the header
-const COSTCO_PROGRAM_LOGO = "/lovable-uploads/cc3d59e8-7972-4b76-ae45-1ab372980923.png";
+// Define the Dollar Tree Scheme logo from the header
+const DOLLAR_TREE_LOGO = "/lovable-uploads/91fcee7b-309a-4089-88bf-5e8f451e786b.png";
+
 const FacebookReviews = () => {
   const [showAllReviews, setShowAllReviews] = useState(false);
   const [sortOption, setSortOption] = useState<SortOption>("newest");
@@ -47,15 +48,15 @@ const FacebookReviews = () => {
 
     // Also preload the program logo
     const logoImg = new Image();
-    logoImg.src = COSTCO_PROGRAM_LOGO;
+    logoImg.src = DOLLAR_TREE_LOGO;
   }, []);
 
-  // Define all reviews in one array - focused on Costco gift card surveys
+  // Define all reviews in one array - focused on Dollar Tree gift card surveys
   const allReviews: Review[] = [{
     name: "Sarah Johnson",
     avatar: "https://i.pravatar.cc/40?img=1",
     time: "2 hours ago",
-    text: "I just received my $500 Costco Gift Card! The survey was super easy and processing was fast. So happy with this program!",
+    text: "I just received my $500 Dollar Tree Gift Card! The survey was super easy and processing was fast. So happy with this scheme!",
     likes: 24,
     comments: 2,
     images: [FALLBACK_IMAGE]
@@ -63,7 +64,7 @@ const FacebookReviews = () => {
     name: "Michael Thomas",
     avatar: "https://i.pravatar.cc/40?img=5",
     time: "Yesterday",
-    text: "This is legit! Was skeptical at first but decided to try anyway. Got my Costco Gift Card in just 3 days after completing the survey. Already used it for my monthly shopping!",
+    text: "This is legit! Was skeptical at first but decided to try anyway. Got my Dollar Tree Gift Card in just 3 days after completing the survey. Already used it for household essentials!",
     likes: 42,
     comments: 5,
     images: [FALLBACK_IMAGE]
@@ -71,7 +72,7 @@ const FacebookReviews = () => {
     name: "Jessica Williams",
     avatar: "https://i.pravatar.cc/40?img=8",
     time: "2 days ago",
-    text: "Just wow! Survey took less than 5 minutes and the Gift Card arrived perfectly. My grocery budget was tight so this came at the perfect time!",
+    text: "Just wow! Survey took less than 5 minutes and the Gift Card arrived perfectly. My budget was tight so this came at the perfect time!",
     likes: 19,
     comments: 1,
     images: [FALLBACK_IMAGE]
@@ -87,7 +88,7 @@ const FacebookReviews = () => {
     name: "Amanda Rodriguez",
     avatar: "https://i.pravatar.cc/40?img=22",
     time: "Last week",
-    text: "Best decision ever! My Costco Gift Card arrived quickly and I love all the groceries I was able to buy. The Ultimate Costco Program is amazing - thank you so much!",
+    text: "Best decision ever! My Dollar Tree Gift Card arrived quickly and I love all the items I was able to buy. The Dollar Tree Scheme is amazing - thank you so much!",
     likes: 57,
     comments: 7,
     images: [FALLBACK_IMAGE]
@@ -97,7 +98,7 @@ const FacebookReviews = () => {
     name: "Emma Peterson",
     avatar: "https://i.pravatar.cc/40?img=3",
     time: "4 days ago",
-    text: "Thought it was too good to be true, but I'm literally shopping at Costco with my $500 Gift Card! The process was quick and the card arrived in perfect condition.",
+    text: "Thought it was too good to be true, but I'm literally shopping at Dollar Tree with my $500 Gift Card! The process was quick and the card arrived in perfect condition.",
     likes: 21,
     comments: 3,
     images: []
@@ -105,7 +106,7 @@ const FacebookReviews = () => {
     name: "Liam Johnson",
     avatar: "https://i.pravatar.cc/40?img=10",
     time: "5 days ago",
-    text: "So grateful for this opportunity! My grocery budget was tight this month. The survey was straightforward and my Costco Gift Card came in the mail just 4 days later.",
+    text: "So grateful for this opportunity! My shopping budget was tight this month. The survey was straightforward and my Dollar Tree Gift Card came in the mail just 4 days later.",
     likes: 17,
     comments: 2,
     images: []
@@ -113,7 +114,7 @@ const FacebookReviews = () => {
     name: "Olivia Rodriguez",
     avatar: "https://i.pravatar.cc/40?img=16",
     time: "Last week",
-    text: "My friends didn't believe me when I told them about this program, but now they're all signing up after seeing my $500 Costco Gift Card! The bulk savings are incredible.",
+    text: "My friends didn't believe me when I told them about this scheme, but now they're all signing up after seeing my $500 Dollar Tree Gift Card! The savings are incredible.",
     likes: 29,
     comments: 5,
     images: []
@@ -121,7 +122,7 @@ const FacebookReviews = () => {
     name: "Noah Martinez",
     avatar: "https://i.pravatar.cc/40?img=20",
     time: "Last week",
-    text: "Just got my Costco Gift Card yesterday. Used it immediately and stocked up on all my essentials. This program is seriously awesome!",
+    text: "Just got my Dollar Tree Gift Card yesterday. Used it immediately and stocked up on all my essentials. This scheme is seriously awesome!",
     likes: 15,
     comments: 1,
     images: []
@@ -129,7 +130,7 @@ const FacebookReviews = () => {
     name: "Ava Thompson",
     avatar: "https://i.pravatar.cc/40?img=23",
     time: "2 weeks ago",
-    text: "After some unexpected bills this month, I couldn't afford my usual Costco run. This Gift Card program was a lifesaver! $500 goes a long way at Costco!",
+    text: "After some unexpected bills this month, I couldn't afford my usual shopping trip. This Gift Card scheme was a lifesaver! $500 goes a long way at Dollar Tree!",
     likes: 33,
     comments: 4,
     images: []
@@ -137,7 +138,7 @@ const FacebookReviews = () => {
     name: "Ethan Wright",
     avatar: "https://i.pravatar.cc/40?img=33",
     time: "3 weeks ago",
-    text: "I was hesitant but decided to try the survey anyway. So glad I did! The whole process was smooth and I got my Costco Gift Card right on time as promised.",
+    text: "I was hesitant but decided to try the survey anyway. So glad I did! The whole process was smooth and I got my Dollar Tree Gift Card right on time as promised.",
     likes: 41,
     comments: 6,
     images: []
@@ -275,9 +276,18 @@ const FacebookReviews = () => {
   const sortedReviews = getSortedReviews();
   const displayedReviews = showAllReviews ? sortedReviews : sortedReviews.slice(0, 5);
 
-  // Get a unique response for a specific review - Updated for Costco Gift Card
+  // Get a unique response for a specific review - Updated for Dollar Tree Gift Card
   const getUniqueResponse = (index: number, reviewName: string) => {
-    const responses = [`Thanks for sharing your experience, ${reviewName}! 😊 We're thrilled you're enjoying your Costco Gift Card. Our team works hard to make processing as fast as possible!`, `We really appreciate your feedback, ${reviewName}! The $500 Costco Gift Card is indeed a fantastic reward, and we're delighted it arrived in perfect condition.`, `Thank you so much for your kind words, ${reviewName}! We're committed to making this program accessible to everyone who qualifies. Enjoy all the amazing products at Costco!`, `We're so glad to hear about your positive experience, ${reviewName}! Our goal is to make the survey process as simple as possible. Thank you for being part of our program!`, `Your satisfaction means everything to us, ${reviewName}! We're happy that the Costco Gift Card meets your expectations. Don't hesitate to reach out if you have any questions!`, `Thanks for trusting our program, ${reviewName}! Many people are skeptical at first, but we're dedicated to delivering quality rewards to all our qualified participants.`, `We love hearing success stories like yours, ${reviewName}! Costco has so many great products to choose from. Thanks for sharing your experience with our community!`, `Thank you for your wonderful feedback, ${reviewName}! We're glad the process was smooth and you're enjoying your Gift Card. That's exactly what we aim for!`];
+    const responses = [
+      `Thanks for sharing your experience, ${reviewName}! 😊 We're thrilled you're enjoying your Dollar Tree Gift Card. Our team works hard to make processing as fast as possible!`, 
+      `We really appreciate your feedback, ${reviewName}! The $500 Dollar Tree Gift Card is indeed a fantastic reward, and we're delighted it arrived in perfect condition.`, 
+      `Thank you so much for your kind words, ${reviewName}! We're committed to making this scheme accessible to everyone who qualifies. Enjoy all the amazing products at Dollar Tree!`, 
+      `We're so glad to hear about your positive experience, ${reviewName}! Our goal is to make the survey process as simple as possible. Thank you for being part of our scheme!`, 
+      `Your satisfaction means everything to us, ${reviewName}! We're happy that the Dollar Tree Gift Card meets your expectations. Don't hesitate to reach out if you have any questions!`, 
+      `Thanks for trusting our scheme, ${reviewName}! Many people are skeptical at first, but we're dedicated to delivering quality rewards to all our qualified participants.`, 
+      `We love hearing success stories like yours, ${reviewName}! Dollar Tree has so many great products to choose from. Thanks for sharing your experience with our community!`, 
+      `Thank you for your wonderful feedback, ${reviewName}! We're glad the process was smooth and you're enjoying your Gift Card. That's exactly what we aim for!`
+    ];
 
     // Use modulo to cycle through responses if there are more reviews than responses
     return responses[index % responses.length];
@@ -294,7 +304,7 @@ const FacebookReviews = () => {
           <div className="w-8 h-8 bg-[#3b5998] rounded-full flex items-center justify-center">
             <span className="text-white font-bold">f</span>
           </div>
-          <span className="ml-2 font-semibold text-[#3b5998]">Read what others say about our program:</span>
+          <span className="ml-2 font-semibold text-[#3b5998]">Read what others say about our scheme:</span>
         </div>
         <span className="text-sm text-gray-600 font-medium">134 comments</span>
       </div>
@@ -352,20 +362,20 @@ const FacebookReviews = () => {
             </div>
           </div>
           
-          {/* Ultimate Costco Program Replies - only show for randomly selected reviews */}
-          {reviewsWithReplies.includes(index) && <div className="ml-10 mt-2 border-l-2 border-gray-200 pl-3">
+          {/* Ultimate Dollar Tree Scheme Replies - only show for randomly selected reviews */}
+          {reviewsWithReplies && reviewsWithReplies.includes(index) && <div className="ml-10 mt-2 border-l-2 border-gray-200 pl-3">
               <div className="flex items-start">
                 <div className="relative">
                   <Avatar className="w-6 h-6 mr-2">
-                    <AvatarImage src={COSTCO_PROGRAM_LOGO} alt="Ultimate Costco Program" loading="eager" fetchPriority="high" />
-                    <AvatarFallback>UCP</AvatarFallback>
+                    <AvatarImage src={DOLLAR_TREE_LOGO} alt="Dollar Tree Scheme" loading="eager" fetchPriority="high" />
+                    <AvatarFallback>DTS</AvatarFallback>
                   </Avatar>
                   <div className="absolute -bottom-1 -right-1 bg-green-500 rounded-full w-2 h-2 border border-white"></div>
                 </div>
                 <div>
                   <div className="flex items-center gap-1">
-                    <h5 className="text-xs font-semibold text-[#3b5998]">Ultimate Costco Program</h5>
-                    <span className="text-[10px] bg-blue-100 text-blue-800 px-1 rounded">Verified</span>
+                    <h5 className="text-xs font-semibold text-[#3b5998]">Dollar Tree Scheme</h5>
+                    <span className="text-[10px] bg-green-100 text-green-800 px-1 rounded">Verified</span>
                   </div>
                   <p className="text-xs mt-0.5">
                     {getUniqueResponse(index, review.name.split(" ")[0])}
@@ -390,4 +400,5 @@ const FacebookReviews = () => {
       </div>
     </div>;
 };
+
 export default FacebookReviews;

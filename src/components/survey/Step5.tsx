@@ -71,7 +71,7 @@ const Step5 = () => {
       </div>
 
       <div className="w-full bg-gray-100 rounded-md h-2 mt-6">
-        <div className="bg-blue-600 h-2 rounded-md animate-pulse"></div>
+        <div className="bg-green-600 h-2 rounded-md animate-pulse"></div>
       </div>
       
       <p className="text-center text-sm text-gray-500 mt-2">Processing your information...</p>

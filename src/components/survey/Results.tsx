@@ -9,8 +9,8 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Skeleton } from "@/components/ui/skeleton";
 
-// Define main image path for the Costco gift card
-const COSTCO_GIFT_CARD_IMAGE = "/lovable-uploads/90aa05f7-e6fa-4638-858e-dbd4f05050f0.png";
+// Define main image path for the Dollar Tree gift card
+const DOLLAR_TREE_GIFT_CARD_IMAGE = "/lovable-uploads/90aa05f7-e6fa-4638-858e-dbd4f05050f0.png";
 
 // External placeholder images with lower quality and optimized size
 const PLACEHOLDER_IMAGES = [
@@ -22,7 +22,7 @@ const Results = () => {
   const { answers } = useSurvey();
   const { toast } = useToast();
   const [showingOffer, setShowingOffer] = useState(false);
-  const [giftCardImage, setGiftCardImage] = useState<string>(COSTCO_GIFT_CARD_IMAGE);
+  const [giftCardImage, setGiftCardImage] = useState<string>(DOLLAR_TREE_GIFT_CARD_IMAGE);
   const [imageLoaded, setImageLoaded] = useState(false);
   const isMobile = useIsMobile();
 
@@ -37,7 +37,7 @@ const Results = () => {
     
     // Set loading priority and src after attaching onload handler
     img.fetchPriority = "high";
-    img.src = COSTCO_GIFT_CARD_IMAGE;
+    img.src = DOLLAR_TREE_GIFT_CARD_IMAGE;
     
     // Shorter timeout for faster display fallback
     const timeout = setTimeout(() => {
@@ -61,7 +61,7 @@ const Results = () => {
         <>
           <SurveyHeader 
             title="Congratulations!" 
-            subtitle="Continue to the next step to receive your Costco Gift Card:"
+            subtitle="Continue to the next step to receive your Dollar Tree Gift Card:"
             className="mb-4"
           />
           
@@ -74,7 +74,7 @@ const Results = () => {
                   ) : (
                     <img 
                       src={giftCardImage} 
-                      alt="Costco $500 Gift Card" 
+                      alt="Dollar Tree $500 Gift Card" 
                       className="rounded-md object-contain w-full h-full" 
                       loading="eager"
                       width={isMobile ? "280" : "300"}
@@ -94,10 +94,10 @@ const Results = () => {
               </div>
             </div>
             
-            {/* Blue promotional text - improved mobile padding */}
-            <div className="text-center px-2 py-2 bg-blue-50 rounded-lg border border-blue-100">
-              <p className={`text-blue-600 font-medium ${isMobile ? 'text-sm' : 'text-base'}`}>
-                Upgrade your inventory and Cash in! A Costco $500 Gift Card when you reach the end of the survey!
+            {/* Green promotional text - improved mobile padding */}
+            <div className="text-center px-2 py-2 bg-green-50 rounded-lg border border-green-100">
+              <p className={`text-green-600 font-medium ${isMobile ? 'text-sm' : 'text-base'}`}>
+                Upgrade your shopping experience! A Dollar Tree $500 Gift Card when you reach the end of the survey!
               </p>
             </div>
           </div>
@@ -111,7 +111,7 @@ const Results = () => {
               className="block w-full"
             >
               <Button 
-                className={`w-full bg-blue-600 hover:bg-blue-700 py-6 text-lg animate-pulse ${isMobile ? 'shadow-lg' : ''}`}
+                className={`w-full bg-green-600 hover:bg-green-700 py-6 text-lg animate-pulse ${isMobile ? 'shadow-lg' : ''}`}
               >
                 Continue
               </Button>

@@ -13,15 +13,15 @@ const StartScreen = () => {
     goToNextStep();
   };
   return <div className="max-w-md mx-auto">
-      <SurveyHeader title="Great news! You are among the first to join our Ultimate Costco Program!" />
+      <SurveyHeader title="Great news! You are among the first to join our Dollar Tree Scheme!" />
       
       <div className="bg-white p-6 rounded-lg shadow-md mb-6">
         <p className="text-center text-lg mb-4">
-          Claim a <span className="text-blue-800 font-semibold">Costco Gift Card</span> by participating in our exclusive Ultimate Costco Program. Simply share your shopping experience in our quick 5-minute survey!
+          Claim a <span className="text-green-800 font-semibold">Dollar Tree Gift Card</span> by participating in our exclusive Dollar Tree Scheme. Simply share your shopping experience in our quick 5-minute survey!
         </p>
         
         <p className="text-center mb-6">
-          Ready to take your grocery's too the next level? Click the <span className="text-blue-800 font-semibold">Start</span> button below
+          Ready to take your shopping too the next level? Click the <span className="text-green-800 font-semibold">Start</span> button below
         </p>
         
         <p className="text-sm text-red-600 text-center font-medium mb-6">
@@ -29,7 +29,7 @@ const StartScreen = () => {
         </p>
       </div>
 
-      <Button onClick={handleStart} className="w-full bg-blue-800 hover:bg-blue-900 text-lg py-6">
+      <Button onClick={handleStart} className="w-full bg-green-800 hover:bg-green-900 text-lg py-6">
         Start <ArrowRight className="ml-2" />
       </Button>
 
