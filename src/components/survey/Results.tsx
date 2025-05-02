@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { useSurvey } from "@/contexts/SurveyContext";
@@ -10,10 +9,10 @@ import IPhoneImageFetcher from "@/components/IPhoneImageFetcher";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Skeleton } from "@/components/ui/skeleton";
 
-// Define fallback image path with low quality parameters
-const COSTCO_GIFT_CARD_IMAGE = "/lovable-uploads/73921274-7afe-4bc3-9ae2-83873c2f871a.png?q=30&w=300";
+// Define new main image path for the Costco gift card
+const COSTCO_GIFT_CARD_IMAGE = "/lovable-uploads/90aa05f7-e6fa-4638-858e-dbd4f05050f0.png";
 
-// External placeholder images with low quality
+// External placeholder images with low quality (keeping as fallbacks)
 const PLACEHOLDER_IMAGES = [
   "https://images.unsplash.com/photo-1498936178812-4b2e558d2937?auto=format&q=50&w=240", // Low quality, smaller size
   "https://images.unsplash.com/photo-1469041797191-50ace28483c3?auto=format&q=50&w=240"  // Low quality, smaller size

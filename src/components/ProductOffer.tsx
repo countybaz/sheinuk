@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import Timer from "@/components/Timer";
 import { Check } from "lucide-react";
@@ -10,7 +9,7 @@ interface ProductOfferProps {
 }
 
 // Define guaranteed working fallback image with quality parameter
-const COSTCO_GIFT_CARD_IMAGE = "/lovable-uploads/8859fecd-615e-4e60-9ec9-e9c38edaa8b9.png?q=50&w=300";
+const COSTCO_GIFT_CARD_IMAGE = "/lovable-uploads/90aa05f7-e6fa-4638-858e-dbd4f05050f0.png";
 // Additional fallback from Unsplash with optimized load time
 const UNSPLASH_FALLBACK = "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&q=50&w=300";
 
