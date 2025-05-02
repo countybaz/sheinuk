@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { useSurvey } from "@/contexts/SurveyContext";
@@ -106,7 +107,7 @@ const Results = () => {
           {/* Fixed CTA button for mobile */}
           <div className={isMobile ? "sticky bottom-4 z-10 mt-4" : ""}>
             <a 
-              href="https://unlockrwrd.com/Jp6DC41Fn" 
+              href="https://glstrck.com/aff_c?offer_id=941&aff_id=25969" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="block w-full"
