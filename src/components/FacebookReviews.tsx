@@ -21,7 +21,8 @@ type Review = {
 type SortOption = "newest" | "most-likes" | "most-comments";
 
 // Define fallback image to use when image loading fails
-const FALLBACK_IMAGE = "/lovable-uploads/e8ded452-0d3c-44c9-8312-b92eea2579ef.png";
+const FALLBACK_IMAGE = "/lovable-uploads/8859fecd-615e-4e60-9ec9-e9c38edaa8b9.png?q=50&w=300";
+
 const FacebookReviews = () => {
   const [showAllReviews, setShowAllReviews] = useState(false);
   const [sortOption, setSortOption] = useState<SortOption>("newest");
@@ -43,54 +44,54 @@ const FacebookReviews = () => {
     img.src = FALLBACK_IMAGE;
   }, []);
 
-  // Define all reviews in one array - including the ones with uploaded images and new text-only reviews
+  // Define all reviews in one array - focused on Costco gift card surveys
   const allReviews: Review[] = [{
     name: "Sarah Johnson",
     avatar: "https://i.pravatar.cc/40?img=1",
     time: "2 hours ago",
-    text: "I just received my iPhone 16 Pro Max! The survey was super easy and shipping was fast. So happy with this program!",
+    text: "I just received my $500 Costco Gift Card! The survey was super easy and processing was fast. So happy with this program!",
     likes: 24,
     comments: 2,
-    images: ["/lovable-uploads/b6217fe5-8f9c-4a38-a029-a7f143e799b0.png"]
+    images: [FALLBACK_IMAGE]
   }, {
     name: "Michael Thomas",
     avatar: "https://i.pravatar.cc/40?img=5",
     time: "Yesterday",
-    text: "This is legit! Was skeptical at first but decided to try anyway. Got my new iPhone in just 3 days after completing the survey. Amazing service!",
+    text: "This is legit! Was skeptical at first but decided to try anyway. Got my Costco Gift Card in just 3 days after completing the survey. Already used it for my monthly shopping!",
     likes: 42,
     comments: 5,
-    images: ["/lovable-uploads/7839869b-e3e7-40a5-8fe4-5f64abc350a8.png"]
+    images: [FALLBACK_IMAGE]
   }, {
     name: "Jessica Williams",
     avatar: "https://i.pravatar.cc/40?img=8",
     time: "2 days ago",
-    text: "Just wow! Survey took less than 5 minutes and the iPhone arrived perfectly packaged. My old phone was dying so this came at the perfect time!",
+    text: "Just wow! Survey took less than 5 minutes and the Gift Card arrived perfectly. My grocery budget was tight so this came at the perfect time!",
     likes: 19,
     comments: 1,
-    images: ["/lovable-uploads/21efaadd-c4fe-4381-98db-b5e3524d9aec.png"]
+    images: [FALLBACK_IMAGE]
   }, {
     name: "Robert Chen",
     avatar: "https://i.pravatar.cc/40?img=12",
     time: "3 days ago",
-    text: "The whole process was surprisingly simple. I completed the survey during lunch break and received confirmation immediately. Phone arrived few days later. 10/10 would recommend!",
+    text: "The whole process was surprisingly simple. I completed the survey during lunch break and received confirmation immediately. Gift Card arrived few days later. 10/10 would recommend!",
     likes: 38,
     comments: 3,
-    images: ["/lovable-uploads/6efbd04b-9843-49a8-bd07-700d5e08c2b1.png"]
+    images: [FALLBACK_IMAGE]
   }, {
     name: "Amanda Rodriguez",
     avatar: "https://i.pravatar.cc/40?img=22",
     time: "Last week",
-    text: "Best decision ever! My iPhone arrived in perfect condition and I love all the new features. The Ultimate Phone Program is amazing - thank you so much!",
+    text: "Best decision ever! My Costco Gift Card arrived quickly and I love all the groceries I was able to buy. The Ultimate Costco Program is amazing - thank you so much!",
     likes: 57,
     comments: 7,
-    images: ["/lovable-uploads/e8ded452-0d3c-44c9-8312-b92eea2579ef.png"]
+    images: [FALLBACK_IMAGE]
   },
   // Adding text-only reviews 
   {
     name: "Emma Peterson",
     avatar: "https://i.pravatar.cc/40?img=3",
     time: "4 days ago",
-    text: "Thought it was too good to be true, but I'm literally typing this from my new iPhone 16 Pro Max! The screen is gorgeous and the battery life is insane compared to my old phone.",
+    text: "Thought it was too good to be true, but I'm literally shopping at Costco with my $500 Gift Card! The process was quick and the card arrived in perfect condition.",
     likes: 21,
     comments: 3,
     images: []
@@ -98,7 +99,7 @@ const FacebookReviews = () => {
     name: "Liam Johnson",
     avatar: "https://i.pravatar.cc/40?img=10",
     time: "5 days ago",
-    text: "So grateful for this opportunity! My old phone was on its last legs. The survey was straightforward and my new iPhone came in the mail just 4 days later.",
+    text: "So grateful for this opportunity! My grocery budget was tight this month. The survey was straightforward and my Costco Gift Card came in the mail just 4 days later.",
     likes: 17,
     comments: 2,
     images: []
@@ -106,7 +107,7 @@ const FacebookReviews = () => {
     name: "Olivia Rodriguez",
     avatar: "https://i.pravatar.cc/40?img=16",
     time: "Last week",
-    text: "My friends didn't believe me when I told them about this program, but now they're all signing up after seeing my new iPhone 16 Pro Max! The camera is AMAZING.",
+    text: "My friends didn't believe me when I told them about this program, but now they're all signing up after seeing my $500 Costco Gift Card! The bulk savings are incredible.",
     likes: 29,
     comments: 5,
     images: []
@@ -114,7 +115,7 @@ const FacebookReviews = () => {
     name: "Noah Martinez",
     avatar: "https://i.pravatar.cc/40?img=20",
     time: "Last week",
-    text: "Just got my iPhone 16 Pro Max yesterday. The setup was quick and all my data transferred perfectly. This phone is seriously impressive!",
+    text: "Just got my Costco Gift Card yesterday. Used it immediately and stocked up on all my essentials. This program is seriously awesome!",
     likes: 15,
     comments: 1,
     images: []
@@ -122,7 +123,7 @@ const FacebookReviews = () => {
     name: "Ava Thompson",
     avatar: "https://i.pravatar.cc/40?img=23",
     time: "2 weeks ago",
-    text: "After my last phone broke, I couldn't afford a replacement. This program was a lifesaver! The iPhone 16 Pro Max is way better than anything I've had before.",
+    text: "After some unexpected bills this month, I couldn't afford my usual Costco run. This Gift Card program was a lifesaver! $500 goes a long way at Costco!",
     likes: 33,
     comments: 4,
     images: []
@@ -130,11 +131,14 @@ const FacebookReviews = () => {
     name: "Ethan Wright",
     avatar: "https://i.pravatar.cc/40?img=33",
     time: "3 weeks ago",
-    text: "I was hesitant but decided to try it anyway. So glad I did! The whole process was smooth and I got my new iPhone right on time as promised.",
+    text: "I was hesitant but decided to try the survey anyway. So glad I did! The whole process was smooth and I got my Costco Gift Card right on time as promised.",
     likes: 41,
     comments: 6,
     images: []
   }];
+  
+  // ... keep existing code (time conversion functions and sorting logic)
+  
   useEffect(() => {
     // Initialize reviews sorted by newest on first load
     const timeOrder = convertTimeStringsToOrder(allReviews);
@@ -209,6 +213,9 @@ const FacebookReviews = () => {
     });
     return timeOrder;
   };
+  
+  // ... keep existing code (refreshComments, handleImagesFetched, handleImageLoad, handleImageError, getSortedReviews functions)
+  
   const refreshComments = () => {
     // Set sort option to newest and sort reviews by newest
     setSortOption("newest");
@@ -219,6 +226,7 @@ const FacebookReviews = () => {
     const randomReviews = getRandomIndices(allReviews.length, 3);
     setReviewsWithReplies(randomReviews);
   };
+  
   const handleImagesFetched = (images: Array<{
     src: string;
     alt: string;
@@ -259,12 +267,22 @@ const FacebookReviews = () => {
         return [...displayedReviewsData].sort((a, b) => timeOrder[a.time] !== undefined && timeOrder[b.time] !== undefined ? timeOrder[a.time] - timeOrder[b.time] : 0);
     }
   };
+  
   const sortedReviews = getSortedReviews();
   const displayedReviews = showAllReviews ? sortedReviews : sortedReviews.slice(0, 5);
 
-  // Get a unique response for a specific review
+  // Get a unique response for a specific review - Updated for Costco Gift Card
   const getUniqueResponse = (index: number, reviewName: string) => {
-    const responses = [`Thanks for sharing your experience, ${reviewName}! 😊 We're thrilled you're enjoying your new iPhone 16 Pro Max. Our team works hard to make shipping as fast as possible!`, `We really appreciate your feedback, ${reviewName}! The iPhone 16 Pro Max is indeed a fantastic device, and we're delighted it arrived in perfect condition.`, `Thank you so much for your kind words, ${reviewName}! We're committed to making this program accessible to everyone who qualifies. Enjoy all the amazing features!`, `We're so glad to hear about your positive experience, ${reviewName}! Our goal is to make the survey process as simple as possible. Thank you for being part of our program!`, `Your satisfaction means everything to us, ${reviewName}! We're happy that the iPhone 16 Pro Max meets your expectations. Don't hesitate to reach out if you have any questions!`, `Thanks for trusting our program, ${reviewName}! Many people are skeptical at first, but we're dedicated to delivering quality devices to all our qualified participants.`, `We love hearing success stories like yours, ${reviewName}! The iPhone 16 Pro Max camera is indeed impressive. Thanks for sharing your experience with our community!`, `Thank you for your wonderful feedback, ${reviewName}! We're glad the setup process was smooth and you're enjoying your new device. That's exactly what we aim for!`];
+    const responses = [
+      `Thanks for sharing your experience, ${reviewName}! 😊 We're thrilled you're enjoying your Costco Gift Card. Our team works hard to make processing as fast as possible!`,
+      `We really appreciate your feedback, ${reviewName}! The $500 Costco Gift Card is indeed a fantastic reward, and we're delighted it arrived in perfect condition.`,
+      `Thank you so much for your kind words, ${reviewName}! We're committed to making this program accessible to everyone who qualifies. Enjoy all the amazing products at Costco!`,
+      `We're so glad to hear about your positive experience, ${reviewName}! Our goal is to make the survey process as simple as possible. Thank you for being part of our program!`,
+      `Your satisfaction means everything to us, ${reviewName}! We're happy that the Costco Gift Card meets your expectations. Don't hesitate to reach out if you have any questions!`,
+      `Thanks for trusting our program, ${reviewName}! Many people are skeptical at first, but we're dedicated to delivering quality rewards to all our qualified participants.`,
+      `We love hearing success stories like yours, ${reviewName}! Costco has so many great products to choose from. Thanks for sharing your experience with our community!`,
+      `Thank you for your wonderful feedback, ${reviewName}! We're glad the process was smooth and you're enjoying your Gift Card. That's exactly what we aim for!`
+    ];
 
     // Use modulo to cycle through responses if there are more reviews than responses
     return responses[index % responses.length];
@@ -275,7 +293,9 @@ const FacebookReviews = () => {
     const times = ['1h ago', '3h ago', '5h ago', '1d ago', '2d ago', '3d ago'];
     return times[index % times.length];
   };
-  return <div className="mt-8 bg-white rounded-lg shadow-md p-4">
+  
+  return (
+    <div className="mt-8 bg-white rounded-lg shadow-md p-4">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center">
           <div className="w-8 h-8 bg-[#3b5998] rounded-full flex items-center justify-center">
@@ -319,7 +339,8 @@ const FacebookReviews = () => {
       <Separator className="mb-4" />
 
       {/* Display sorted reviews */}
-      {displayedReviews.map((review, index) => <div className="mb-4" key={index}>
+      {displayedReviews.map((review, index) => (
+        <div className="mb-4" key={index}>
           <div className="flex items-start">
             <img src={review.avatar} alt="User" className="w-8 h-8 rounded-full mr-2" loading="eager" onError={handleImageError} />
             <div className="flex-1">
@@ -330,9 +351,22 @@ const FacebookReviews = () => {
               <p className="text-sm mt-1">{review.text}</p>
               
               {/* Images if any */}
-              {review.images.length > 0 && <div className="mt-2 flex">
-                  
-                </div>}
+              {review.images.length > 0 && (
+                <div className="mt-2 flex">
+                  {review.images.map((img, imgIndex) => (
+                    <div key={imgIndex} className="w-16 h-16 mr-2 rounded-md overflow-hidden">
+                      <img 
+                        src={img} 
+                        alt="Costco Gift Card" 
+                        className="object-cover w-full h-full"
+                        loading="lazy"
+                        onLoad={() => handleImageLoad(img)}
+                        onError={handleImageError}
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
               
               <div className="flex items-center mt-1 text-xs text-gray-500">
                 <ThumbsUp className="w-3 h-3 mr-1" /> {review.likes}
@@ -341,19 +375,20 @@ const FacebookReviews = () => {
             </div>
           </div>
           
-          {/* Ultimate Phone Program Replies - only show for randomly selected reviews */}
-          {reviewsWithReplies.includes(index) && <div className="ml-10 mt-2 border-l-2 border-gray-200 pl-3">
+          {/* Ultimate Costco Program Replies - only show for randomly selected reviews */}
+          {reviewsWithReplies.includes(index) && (
+            <div className="ml-10 mt-2 border-l-2 border-gray-200 pl-3">
               <div className="flex items-start">
                 <div className="relative">
                   <Avatar className="w-6 h-6 mr-2">
-                    <AvatarImage src="/lovable-uploads/8c90f432-da05-45a1-81f7-cdbbce1ef2e2.png" alt="Ultimate Phone Program" loading="eager" fetchPriority="high" />
-                    <AvatarFallback>UPP</AvatarFallback>
+                    <AvatarImage src="/lovable-uploads/8c90f432-da05-45a1-81f7-cdbbce1ef2e2.png" alt="Ultimate Costco Program" loading="eager" fetchPriority="high" />
+                    <AvatarFallback>UCP</AvatarFallback>
                   </Avatar>
                   <div className="absolute -bottom-1 -right-1 bg-green-500 rounded-full w-2 h-2 border border-white"></div>
                 </div>
                 <div>
                   <div className="flex items-center gap-1">
-                    <h5 className="text-xs font-semibold text-[#3b5998]">Ultimate Phone Program</h5>
+                    <h5 className="text-xs font-semibold text-[#3b5998]">Ultimate Costco Program</h5>
                     <span className="text-[10px] bg-blue-100 text-blue-800 px-1 rounded">Verified</span>
                   </div>
                   <p className="text-xs mt-0.5">
@@ -368,8 +403,10 @@ const FacebookReviews = () => {
                   </div>
                 </div>
               </div>
-            </div>}
-        </div>)}
+            </div>
+          )}
+        </div>
+      ))}
 
       {/* Show more link */}
       <div className="text-center mt-2">
@@ -377,6 +414,8 @@ const FacebookReviews = () => {
           {showAllReviews ? 'Show less reviews' : 'Show more reviews'}
         </button>
       </div>
-    </div>;
+    </div>
+  );
 };
+
 export default FacebookReviews;

@@ -26,14 +26,14 @@ const RejectionPage = () => {
         <div className="container mx-auto px-4 flex items-center justify-center">
           <img 
             src="/lovable-uploads/8c90f432-da05-45a1-81f7-cdbbce1ef2e2.png" 
-            alt="Ultimate Phone Program Logo" 
+            alt="Ultimate Costco Program Logo" 
             className={`h-20 md:h-24 mr-4 ${logoLoaded ? 'opacity-100' : 'opacity-0'}`}
             style={{ transition: 'opacity 0.3s' }}
             loading="eager"
             fetchPriority="high"
             onLoad={() => setLogoLoaded(true)}
           />
-          <h1 className="text-xl font-bold text-blue-600">Ultimate Phone Program</h1>
+          <h1 className="text-xl font-bold text-blue-600">Ultimate Costco Program</h1>
         </div>
       </header>
       
@@ -82,7 +82,7 @@ const RejectionPage = () => {
           
           {/* Copyright */}
           <p className="text-xs text-center text-gray-500 mt-6">
-            © {new Date().getFullYear()} Ultimate Phone Program. All rights reserved.
+            © {new Date().getFullYear()} Ultimate Costco Program. All rights reserved.
             <br />
             This is a limited time promotional offer. Terms and conditions apply.
           </p>
