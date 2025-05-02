@@ -74,7 +74,7 @@ const Results = () => {
                   ) : (
                     <img 
                       src={giftCardImage} 
-                      alt="Dollar Tree $500 Gift Card" 
+                      alt="Dollar Tree Gift Card" 
                       className="rounded-md object-contain w-full h-full" 
                       loading="eager"
                       width={isMobile ? "280" : "300"}
@@ -97,7 +97,7 @@ const Results = () => {
             {/* Green promotional text - improved mobile padding */}
             <div className="text-center px-2 py-2 bg-green-50 rounded-lg border border-green-100">
               <p className={`text-green-600 font-medium ${isMobile ? 'text-sm' : 'text-base'}`}>
-                Upgrade your shopping experience! A Dollar Tree $500 Gift Card when you reach the end of the survey!
+                Upgrade your shopping experience! A Dollar Tree Gift Card when you reach the end of the survey!
               </p>
             </div>
           </div>

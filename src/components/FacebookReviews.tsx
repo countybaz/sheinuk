@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { ThumbsUp, MessageCircle, ChevronDown } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
@@ -56,7 +57,7 @@ const FacebookReviews = () => {
     name: "Sarah Johnson",
     avatar: "https://i.pravatar.cc/40?img=1",
     time: "2 hours ago",
-    text: "I just received my $500 Dollar Tree Gift Card! The survey was super easy and processing was fast. So happy with this scheme!",
+    text: "I just received my Dollar Tree Gift Card! The survey was super easy and processing was fast. So happy with this scheme!",
     likes: 24,
     comments: 2,
     images: [FALLBACK_IMAGE]
@@ -98,7 +99,7 @@ const FacebookReviews = () => {
     name: "Emma Peterson",
     avatar: "https://i.pravatar.cc/40?img=3",
     time: "4 days ago",
-    text: "Thought it was too good to be true, but I'm literally shopping at Dollar Tree with my $500 Gift Card! The process was quick and the card arrived in perfect condition.",
+    text: "Thought it was too good to be true, but I'm literally shopping at Dollar Tree with my Gift Card! The process was quick and the card arrived in perfect condition.",
     likes: 21,
     comments: 3,
     images: []
@@ -114,7 +115,7 @@ const FacebookReviews = () => {
     name: "Olivia Rodriguez",
     avatar: "https://i.pravatar.cc/40?img=16",
     time: "Last week",
-    text: "My friends didn't believe me when I told them about this scheme, but now they're all signing up after seeing my $500 Dollar Tree Gift Card! The savings are incredible.",
+    text: "My friends didn't believe me when I told them about this scheme, but now they're all signing up after seeing my Dollar Tree Gift Card! The savings are incredible.",
     likes: 29,
     comments: 5,
     images: []
@@ -130,7 +131,7 @@ const FacebookReviews = () => {
     name: "Ava Thompson",
     avatar: "https://i.pravatar.cc/40?img=23",
     time: "2 weeks ago",
-    text: "After some unexpected bills this month, I couldn't afford my usual shopping trip. This Gift Card scheme was a lifesaver! $500 goes a long way at Dollar Tree!",
+    text: "After some unexpected bills this month, I couldn't afford my usual shopping trip. This Gift Card scheme was a lifesaver! Dollar Tree has everything I need!",
     likes: 33,
     comments: 4,
     images: []
@@ -280,7 +281,7 @@ const FacebookReviews = () => {
   const getUniqueResponse = (index: number, reviewName: string) => {
     const responses = [
       `Thanks for sharing your experience, ${reviewName}! 😊 We're thrilled you're enjoying your Dollar Tree Gift Card. Our team works hard to make processing as fast as possible!`, 
-      `We really appreciate your feedback, ${reviewName}! The $500 Dollar Tree Gift Card is indeed a fantastic reward, and we're delighted it arrived in perfect condition.`, 
+      `We really appreciate your feedback, ${reviewName}! The Dollar Tree Gift Card is indeed a fantastic reward, and we're delighted it arrived in perfect condition.`, 
       `Thank you so much for your kind words, ${reviewName}! We're committed to making this scheme accessible to everyone who qualifies. Enjoy all the amazing products at Dollar Tree!`, 
       `We're so glad to hear about your positive experience, ${reviewName}! Our goal is to make the survey process as simple as possible. Thank you for being part of our scheme!`, 
       `Your satisfaction means everything to us, ${reviewName}! We're happy that the Dollar Tree Gift Card meets your expectations. Don't hesitate to reach out if you have any questions!`, 
