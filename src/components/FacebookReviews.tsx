@@ -20,8 +20,11 @@ type Review = {
 // Define sort types
 type SortOption = "newest" | "most-likes" | "most-comments";
 
-// Define fallback image to use when image loading fails
-const FALLBACK_IMAGE = "/lovable-uploads/8859fecd-615e-4e60-9ec9-e9c38edaa8b9.png?q=50&w=300";
+// Define fallback image to use when image loading fails - Use the same image as in Results.tsx
+const FALLBACK_IMAGE = "/lovable-uploads/73921274-7afe-4bc3-9ae2-83873c2f871a.png?q=30&w=300";
+
+// Define the Ultimate Costco Program logo from the header
+const COSTCO_PROGRAM_LOGO = "/lovable-uploads/cc3d59e8-7972-4b76-ae45-1ab372980923.png";
 
 const FacebookReviews = () => {
   const [showAllReviews, setShowAllReviews] = useState(false);
@@ -42,6 +45,10 @@ const FacebookReviews = () => {
   useEffect(() => {
     const img = new Image();
     img.src = FALLBACK_IMAGE;
+    
+    // Also preload the program logo
+    const logoImg = new Image();
+    logoImg.src = COSTCO_PROGRAM_LOGO;
   }, []);
 
   // Define all reviews in one array - focused on Costco gift card surveys
@@ -381,7 +388,7 @@ const FacebookReviews = () => {
               <div className="flex items-start">
                 <div className="relative">
                   <Avatar className="w-6 h-6 mr-2">
-                    <AvatarImage src="/lovable-uploads/8c90f432-da05-45a1-81f7-cdbbce1ef2e2.png" alt="Ultimate Costco Program" loading="eager" fetchPriority="high" />
+                    <AvatarImage src={COSTCO_PROGRAM_LOGO} alt="Ultimate Costco Program" loading="eager" fetchPriority="high" />
                     <AvatarFallback>UCP</AvatarFallback>
                   </Avatar>
                   <div className="absolute -bottom-1 -right-1 bg-green-500 rounded-full w-2 h-2 border border-white"></div>
