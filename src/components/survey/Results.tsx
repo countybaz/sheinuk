@@ -11,7 +11,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { Skeleton } from "@/components/ui/skeleton";
 
 // Define fallback image path with low quality parameters
-const COSTCO_GIFT_CARD_IMAGE = "/lovable-uploads/8859fecd-615e-4e60-9ec9-e9c38edaa8b9.png?q=50&w=300";
+const COSTCO_GIFT_CARD_IMAGE = "/lovable-uploads/73921274-7afe-4bc3-9ae2-83873c2f871a.png?q=30&w=300";
 
 // External placeholder images with low quality
 const PLACEHOLDER_IMAGES = [
@@ -42,7 +42,7 @@ const Results = () => {
     // Mark as loaded after a short timeout to avoid waiting too long
     const timeout = setTimeout(() => {
       setImageLoaded(true);
-    }, 1000); // Short timeout for faster display
+    }, 800); // Short timeout for faster display
     
     return () => clearTimeout(timeout);
   }, []);
@@ -115,7 +115,7 @@ const Results = () => {
               <Button 
                 className={`w-full bg-blue-600 hover:bg-blue-700 py-6 text-lg animate-pulse ${isMobile ? 'shadow-lg' : ''}`}
               >
-                Continue to Claim Your Gift Card
+                Continue
               </Button>
             </a>
           </div>
