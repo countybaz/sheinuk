@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import SurveyHeader from "@/components/SurveyHeader";
 import { useSurvey } from "@/contexts/SurveyContext";
@@ -15,11 +16,11 @@ const StartScreen = () => {
       
       <div className="bg-white p-6 rounded-lg shadow-md mb-6">
         <p className="text-center text-lg mb-4">
-          Claim a <span className="text-blue-800 font-semibold">Costco Gift Card</span> by participating in our exclusive Ultimate Costco Program. Simply share your shopping experience in our quick 3-question survey!
+          Claim a <span className="text-blue-800 font-semibold">Costco Gift Card</span> by participating in our exclusive Ultimate Costco Program. Simply share your shopping experience in our quick 5-minute survey!
         </p>
         
         <p className="text-center mb-6">
-          Join thousands of satisfied customers who've already received their rewards. It only takes a minute!
+          Join thousands of satisfied customers who've already received their rewards. It only takes 5 minutes!
         </p>
         
         <p className="text-sm text-red-600 text-center font-medium mb-6">
