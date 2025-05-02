@@ -11,7 +11,7 @@ const Step3 = () => {
 
   const handleNext = () => {
     if (selected) {
-      setAnswer("upgrade_frequency", selected);
+      setAnswer("costco_staff", selected);
       goToNextStep();
     }
   };
@@ -24,22 +24,17 @@ const Step3 = () => {
       />
       
       <div className="mb-6">
-        <h2 className="text-lg font-medium mb-4">How often do you upgrade your tech devices?</h2>
+        <h2 className="text-lg font-medium mb-4">Do you find the Costco staff helpful?</h2>
         <div className="space-y-3">
           <SurveyOption 
-            label="Every year" 
-            selected={selected === "every_year"} 
-            onClick={() => setSelected("every_year")}
+            label="Yes" 
+            selected={selected === "yes"} 
+            onClick={() => setSelected("yes")}
           />
           <SurveyOption 
-            label="Every few years" 
-            selected={selected === "every_few_years"} 
-            onClick={() => setSelected("every_few_years")}
-          />
-          <SurveyOption 
-            label="Never upgrade" 
-            selected={selected === "never"} 
-            onClick={() => setSelected("never")}
+            label="No" 
+            selected={selected === "no"} 
+            onClick={() => setSelected("no")}
           />
         </div>
       </div>
@@ -47,7 +42,7 @@ const Step3 = () => {
       <Button 
         onClick={handleNext} 
         disabled={!selected}
-        className="w-full bg-blue-600 hover:bg-blue-700"
+        className="w-full bg-blue-800 hover:bg-blue-900"
       >
         Continue
       </Button>

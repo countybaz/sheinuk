@@ -90,7 +90,7 @@ const ProductOffer = ({ onClaim }: ProductOfferProps) => {
     <div className="border border-gray-200 rounded-lg shadow-lg p-6 max-w-md mx-auto bg-white">
       <div className="text-center mb-4">
         <h3 className="text-xl font-bold text-gray-900">Congratulations!</h3>
-        <p className="text-green-600 font-medium">You've qualified for our special offer!</p>
+        <p className="text-red-600 font-medium">You've qualified for our special Costco offer!</p>
       </div>
 
       <div className="mb-6">
@@ -139,15 +139,15 @@ const ProductOffer = ({ onClaim }: ProductOfferProps) => {
       <div className="mb-6">
         <h4 className="font-bold text-lg mb-2">iPhone 16 Pro Max</h4>
         <div className="flex items-center mb-1">
-          <Check className="h-4 w-4 text-green-500 mr-2" />
+          <Check className="h-4 w-4 text-red-500 mr-2" />
           <span className="text-gray-700">Latest A18 Pro chip</span>
         </div>
         <div className="flex items-center mb-1">
-          <Check className="h-4 w-4 text-green-500 mr-2" />
+          <Check className="h-4 w-4 text-red-500 mr-2" />
           <span className="text-gray-700">48MP camera system</span>
         </div>
         <div className="flex items-center mb-1">
-          <Check className="h-4 w-4 text-green-500 mr-2" />
+          <Check className="h-4 w-4 text-red-500 mr-2" />
           <span className="text-gray-700">All-day battery life</span>
         </div>
       </div>
@@ -155,16 +155,16 @@ const ProductOffer = ({ onClaim }: ProductOfferProps) => {
       <div className="mb-6 text-center">
         <div className="flex items-center justify-center">
           <span className="text-gray-500 line-through text-lg mr-2">$1299.99</span>
-          <span className="text-2xl font-bold text-green-600">$299.99</span>
+          <span className="text-2xl font-bold text-red-600">$299.99</span>
         </div>
-        <p className="text-blue-700 font-medium text-sm mt-1">+ FREE Shipping</p>
+        <p className="text-blue-800 font-medium text-sm mt-1">+ FREE Shipping</p>
       </div>
 
       <Timer minutes={15} />
 
       <Button 
         onClick={onClaim} 
-        className="w-full py-6 text-lg bg-green-600 hover:bg-green-700"
+        className="w-full py-6 text-lg bg-red-600 hover:bg-red-700"
       >
         CLAIM NOW
       </Button>

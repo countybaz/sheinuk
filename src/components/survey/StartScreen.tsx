@@ -17,16 +17,16 @@ const StartScreen = () => {
   return (
     <div className="max-w-md mx-auto">
       <SurveyHeader 
-        title="Great news! You are among the first to join our Ultimate iPhone Program!"
+        title="Great news! You are among the first to join our Ultimate Costco Program!"
       />
       
       <div className="bg-white p-6 rounded-lg shadow-md mb-6">
         <p className="text-center text-lg mb-4">
-          Get a new <span className="text-blue-600 font-semibold">iPhone 16 Pro Max</span> with the Ultimate Phone Program. Simply answer 3 short questions about your digital habits and this fantastic chance is yours!
+          Get a new <span className="text-blue-800 font-semibold">iPhone 16 Pro Max</span> with the Ultimate Costco Program. Simply answer 3 short questions about your Costco experience and this fantastic chance is yours!
         </p>
         
         <p className="text-center mb-6">
-          Ready to take your tech to the next level? Click on the <span className="text-blue-600 font-semibold">Start</span> button below.
+          Ready to take your Costco experience to the next level? Click on the <span className="text-blue-800 font-semibold">Start</span> button below.
         </p>
         
         <p className="text-sm text-red-600 text-center font-medium mb-6">
@@ -34,7 +34,7 @@ const StartScreen = () => {
         </p>
       </div>
 
-      <Button onClick={handleStart} className="w-full bg-blue-600 hover:bg-blue-700 text-lg py-6">
+      <Button onClick={handleStart} className="w-full bg-blue-800 hover:bg-blue-900 text-lg py-6">
         Start <ArrowRight className="ml-2" />
       </Button>
 

@@ -11,7 +11,7 @@ const Step2 = () => {
 
   const handleNext = () => {
     if (selected) {
-      setAnswer("tech_importance", selected);
+      setAnswer("costco_variety", selected);
       goToNextStep();
     }
   };
@@ -24,22 +24,17 @@ const Step2 = () => {
       />
       
       <div className="mb-6">
-        <h2 className="text-lg font-medium mb-4">How important is it for you to keep your gadgets up to date?</h2>
+        <h2 className="text-lg font-medium mb-4">Are you satisfied with the product variety at Costco?</h2>
         <div className="space-y-3">
           <SurveyOption 
-            label="Very important" 
-            selected={selected === "very_important"} 
-            onClick={() => setSelected("very_important")}
+            label="Yes" 
+            selected={selected === "yes"} 
+            onClick={() => setSelected("yes")}
           />
           <SurveyOption 
-            label="Somewhat important" 
-            selected={selected === "somewhat_important"} 
-            onClick={() => setSelected("somewhat_important")}
-          />
-          <SurveyOption 
-            label="Not important at all" 
-            selected={selected === "not_important"} 
-            onClick={() => setSelected("not_important")}
+            label="No" 
+            selected={selected === "no"} 
+            onClick={() => setSelected("no")}
           />
         </div>
       </div>
@@ -47,7 +42,7 @@ const Step2 = () => {
       <Button 
         onClick={handleNext} 
         disabled={!selected}
-        className="w-full bg-blue-600 hover:bg-blue-700"
+        className="w-full bg-blue-800 hover:bg-blue-900"
       >
         Continue
       </Button>
