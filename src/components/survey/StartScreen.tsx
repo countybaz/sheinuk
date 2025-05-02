@@ -1,28 +1,21 @@
-
 import { Button } from "@/components/ui/button";
 import SurveyHeader from "@/components/SurveyHeader";
 import { useSurvey } from "@/contexts/SurveyContext";
 import { ArrowRight } from "lucide-react";
 import FacebookReviews from "@/components/FacebookReviews";
-
 const StartScreen = () => {
   const {
     goToNextStep
   } = useSurvey();
-  
   const handleStart = () => {
     goToNextStep();
   };
-  
-  return (
-    <div className="max-w-md mx-auto">
-      <SurveyHeader 
-        title="Great news! You are among the first to join our Ultimate Costco Program!"
-      />
+  return <div className="max-w-md mx-auto">
+      <SurveyHeader title="Great news! You are among the first to join our Ultimate Costco Program!" />
       
       <div className="bg-white p-6 rounded-lg shadow-md mb-6">
         <p className="text-center text-lg mb-4">
-          Get a new <span className="text-blue-800 font-semibold">iPhone 16 Pro Max</span> with the Ultimate Costco Program. Simply answer 3 short questions about your Costco experience and this fantastic chance is yours!
+          Get a new <span className="text-blue-800 font-semibold"></span> with the Ultimate Costco Program. Simply answer 3 short questions about your Costco experience and this fantastic chance is yours!
         </p>
         
         <p className="text-center mb-6">
@@ -43,8 +36,6 @@ const StartScreen = () => {
 
       {/* Add some space at the bottom */}
       <div className="h-10"></div>
-    </div>
-  );
+    </div>;
 };
-
 export default StartScreen;
