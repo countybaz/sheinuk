@@ -24,7 +24,7 @@ const Step2 = () => {
       />
       
       <div className="mb-6">
-        <h2 className="text-lg font-medium mb-4">Are you satisfied with the product variety at Costco?</h2>
+        <h2 className="text-lg font-medium mb-4">Are you satisfied with the product variety at Dollar Tree?</h2>
         <div className="space-y-3">
           <SurveyOption 
             label="Yes" 
