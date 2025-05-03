@@ -15,6 +15,7 @@ const Step5 = () => {
   });
 
   useEffect(() => {
+    // Stagger the animations with clear timing
     const timers = [
       setTimeout(() => setChecks(prev => ({ ...prev, saved: true })), 1000),
       setTimeout(() => setChecks(prev => ({ ...prev, eligible: true })), 2000),
@@ -22,9 +23,17 @@ const Step5 = () => {
       setTimeout(() => setChecks(prev => ({ ...prev, reserved: true })), 4000)
     ];
 
-    // Auto-progress after all checks complete
+    // Fixed timing: Auto-progress only after the last check is complete and visible
     const autoProgress = setTimeout(() => {
-      goToNextStep();
+      // Ensure all checks are visible before proceeding
+      setChecks({
+        saved: true,
+        eligible: true,
+        rewards: true,
+        reserved: true
+      });
+      // Add a small delay to ensure the last check is fully visible
+      setTimeout(() => goToNextStep(), 500);
     }, 5000);
 
     return () => {
@@ -63,8 +72,8 @@ const Step5 = () => {
         </div>
         
         <div className="flex items-center">
-          <div className={`w-6 h-6 rounded-full mr-3 flex items-center justify-center ${checks.reserved ? 'bg-green-500 text-white' : 'bg-gray-200'}`}>
-            {checks.reserved && <Check className="w-4 h-4" />}
+          <div className={`w-6 h-6 rounded-full mr-3 flex items-center justify-center transition-colors duration-200 ${checks.reserved ? 'bg-green-500 text-white' : 'bg-gray-200'}`}>
+            {checks.reserved && <Check className="w-4 h-4 transition-opacity duration-150" />}
           </div>
           <p className="text-lg">Your place is reserved until the timer runs out</p>
         </div>
