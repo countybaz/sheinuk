@@ -102,8 +102,8 @@ const Results = () => {
             </div>
           </div>
           
-          {/* Improved CTA button for mobile with sticky positioning and updated URL */}
-          <div className={isMobile ? "sticky bottom-4 z-10 mt-4" : ""}>
+          {/* Enhanced CTA button for better mobile visibility */}
+          <div className={`${isMobile ? "sticky bottom-4 z-20 mt-4" : ""} pb-2`}>
             <a 
               href="https://unlockrwrd.com/l37ECYyFM" 
               target="_blank" 
@@ -111,11 +111,16 @@ const Results = () => {
               className="block w-full"
             >
               <Button 
-                className={`w-full bg-green-600 hover:bg-green-700 py-6 text-lg animate-pulse ${isMobile ? 'shadow-lg' : ''}`}
+                className={`w-full py-6 text-lg ${isMobile ? 
+                  'shadow-lg bg-green-500 hover:bg-green-600 text-white font-bold border-2 border-white' : 
+                  'bg-green-600 hover:bg-green-700'} transition-colors duration-200`}
               >
-                Continue
+                <span className={`${isMobile ? 'uppercase tracking-wider' : ''}`}>Continue</span>
               </Button>
             </a>
+            {isMobile && (
+              <div className="absolute -inset-1 bg-green-100 rounded-lg -z-10 blur-sm opacity-70"></div>
+            )}
           </div>
           
           <p className={`text-sm text-center text-gray-500 mt-4 ${isMobile ? 'pb-20' : 'pb-16'}`}>

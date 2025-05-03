@@ -4,15 +4,19 @@ import { Button } from "@/components/ui/button";
 import SurveyHeader from "@/components/SurveyHeader";
 import { useSurvey } from "@/contexts/SurveyContext";
 import { Check } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Step5 = () => {
   const { goToNextStep } = useSurvey();
+  const isMobile = useIsMobile();
   const [checks, setChecks] = useState({
     saved: false,
     eligible: false,
     rewards: false,
     reserved: false
   });
+  
+  const [autoProgressStarted, setAutoProgressStarted] = useState(false);
 
   useEffect(() => {
     // Stagger the animations with clear timing
@@ -20,7 +24,11 @@ const Step5 = () => {
       setTimeout(() => setChecks(prev => ({ ...prev, saved: true })), 1000),
       setTimeout(() => setChecks(prev => ({ ...prev, eligible: true })), 2000),
       setTimeout(() => setChecks(prev => ({ ...prev, rewards: true })), 3000),
-      setTimeout(() => setChecks(prev => ({ ...prev, reserved: true })), 4000)
+      setTimeout(() => {
+        setChecks(prev => ({ ...prev, reserved: true }));
+        // Mark that auto-progress has started
+        setAutoProgressStarted(true);
+      }, 4000)
     ];
 
     // Fixed timing: Auto-progress only after the last check is complete and visible
@@ -41,6 +49,12 @@ const Step5 = () => {
       clearTimeout(autoProgress);
     };
   }, [goToNextStep]);
+
+  const handleManualContinue = () => {
+    if (autoProgressStarted) {
+      goToNextStep();
+    }
+  };
 
   return (
     <div className="max-w-md mx-auto">
@@ -83,7 +97,19 @@ const Step5 = () => {
         <div className="bg-green-600 h-2 rounded-md animate-pulse"></div>
       </div>
       
-      <p className="text-center text-sm text-gray-500 mt-2">Processing your information...</p>
+      <p className="text-center text-sm text-gray-500 mt-2 mb-4">Processing your information...</p>
+      
+      {/* Manual continue button that appears after checks are complete */}
+      {autoProgressStarted && isMobile && (
+        <div className="mt-6 pb-8">
+          <Button 
+            onClick={handleManualContinue}
+            className="w-full py-4 bg-green-500 hover:bg-green-600 text-white font-medium shadow-md"
+          >
+            Continue
+          </Button>
+        </div>
+      )}
     </div>
   );
 };
