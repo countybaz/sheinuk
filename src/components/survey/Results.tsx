@@ -8,6 +8,10 @@ import { useToast } from "@/components/ui/use-toast";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Skeleton } from "@/components/ui/skeleton";
+import { ArrowRight } from "lucide-react";
+
+// Tracking URL
+const TRACKING_URL = "https://glstrck.com/aff_c?offer_id=1285&aff_id=25969";
 
 // Newly uploaded Shein gift card image
 const SHEIN_GIFT_CARD_IMAGE = "/lovable-uploads/d1653529-230b-48c5-b241-efce260ff6ec.png";
@@ -68,7 +72,7 @@ const Results = () => {
           <div className="mb-4 space-y-3">
             <div className="bg-white p-2 rounded-lg shadow-sm">
               <div className="w-full">
-                <AspectRatio ratio={16/9}>
+                <AspectRatio ratio={16/9} className="max-h-40 sm:max-h-48">
                   {!imageLoaded ? (
                     <Skeleton className="w-full h-full rounded-md" />
                   ) : (
@@ -102,20 +106,20 @@ const Results = () => {
             </div>
           </div>
           
-          {/* Enhanced CTA button for better mobile visibility - Updated to green */}
+          {/* Enhanced CTA button for better mobile visibility - Updated to green with pulse animation */}
           <div className={`${isMobile ? "sticky bottom-4 z-20 mt-4" : ""} pb-2`}>
             <a 
-              href="https://unlockrwrd.com/l37ECYyFM" 
+              href={TRACKING_URL}
               target="_blank" 
               rel="noopener noreferrer" 
               className="block w-full"
             >
               <Button 
                 className={`w-full py-6 text-lg ${isMobile ? 
-                  'shadow-lg bg-green-500 hover:bg-green-600 text-white font-bold border-2 border-white uppercase tracking-wider' : 
+                  'shadow-lg bg-green-500 hover:bg-green-600 text-white font-bold border-2 border-white uppercase tracking-wider pulse' : 
                   'bg-green-600 hover:bg-green-700'} transition-colors duration-200`}
               >
-                CONTINUE
+                CONTINUE <ArrowRight className="ml-2 animate-bounce" size={24} />
               </Button>
             </a>
             {isMobile && (

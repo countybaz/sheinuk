@@ -4,9 +4,11 @@ import SurveyHeader from "@/components/SurveyHeader";
 import { useSurvey } from "@/contexts/SurveyContext";
 import { RefreshCw } from "lucide-react";
 import FAQ from "@/components/FAQ";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const RejectionPage = () => {
   const { goToStep } = useSurvey();
+  const isMobile = useIsMobile();
   
   const handleTryAgain = () => {
     goToStep(0); // Go to the start screen
@@ -23,6 +25,8 @@ const RejectionPage = () => {
           src="/lovable-uploads/92df31cc-3da1-4ac0-abdd-86b665018903.png" 
           alt="Shein Review Scheme Logo" 
           className="h-16 mr-4"
+          loading="eager"
+          fetchPriority="high"
         />
         <h1 className="text-xl font-bold text-pink-600">Shein Review Scheme</h1>
         <div className="ml-4">
@@ -41,12 +45,20 @@ const RejectionPage = () => {
         </p>
       </div>
 
-      <Button 
-        onClick={handleTryAgain} 
-        className="w-full bg-green-600 hover:bg-green-700 text-lg py-6"
-      >
-        Try Again <RefreshCw className="ml-2" size={20} />
-      </Button>
+      <div className={`${isMobile ? "sticky bottom-4 z-20 mt-4" : ""}`}>
+        <Button 
+          onClick={handleTryAgain} 
+          className={`w-full py-6 text-lg ${isMobile ? 
+            'shadow-lg bg-green-500 hover:bg-green-600 text-white font-bold uppercase tracking-wider border-2 border-white' : 
+            'bg-green-600 hover:bg-green-700'} transition-colors duration-200`}
+        >
+          Try Again <RefreshCw className="ml-2" size={20} />
+        </Button>
+        
+        {isMobile && (
+          <div className="absolute -inset-1 bg-green-100 rounded-lg -z-10 blur-sm opacity-70"></div>
+        )}
+      </div>
     </div>
   );
 };

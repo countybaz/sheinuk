@@ -1,10 +1,13 @@
 
 import { Button } from "@/components/ui/button";
 import Timer from "@/components/Timer";
-import { Check } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useIsMobile } from "@/hooks/use-mobile";
+
+// Tracking URL
+const TRACKING_URL = "https://glstrck.com/aff_c?offer_id=1285&aff_id=25969";
 
 interface ProductOfferProps {
   onClaim: () => void;
@@ -98,14 +101,20 @@ const ProductOffer = ({ onClaim }: ProductOfferProps) => {
       <Timer minutes={15} />
 
       <div className={`${isMobile ? "sticky bottom-4 z-20 mt-4" : ""}`}>
-        <Button 
-          onClick={onClaim} 
-          className={`w-full py-6 text-lg ${isMobile ? 
-            'shadow-lg bg-green-500 hover:bg-green-600 text-white font-bold uppercase tracking-wider border-2 border-white' : 
-            'bg-green-600 hover:bg-green-700'} transition-colors duration-200`}
+        <a 
+          href={TRACKING_URL}
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="block w-full"
         >
-          CONTINUE
-        </Button>
+          <Button 
+            className={`w-full py-6 text-lg ${isMobile ? 
+              'shadow-lg bg-green-500 hover:bg-green-600 text-white font-bold uppercase tracking-wider border-2 border-white pulse' : 
+              'bg-green-600 hover:bg-green-700'} transition-colors duration-200`}
+          >
+            CONTINUE <ArrowRight className="ml-2 animate-bounce" size={24} />
+          </Button>
+        </a>
         
         {isMobile && (
           <div className="absolute -inset-1 bg-green-100 rounded-lg -z-10 blur-sm opacity-70"></div>
