@@ -9,20 +9,20 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Skeleton } from "@/components/ui/skeleton";
 
-// Define main image path for the Dollar Tree gift card
-const DOLLAR_TREE_GIFT_CARD_IMAGE = "/lovable-uploads/39ce19a4-ca1e-49e7-865f-6bd020b9c9af.png";
+// Define main image path for the Shein gift card (uploaded image)
+const SHEIN_GIFT_CARD_IMAGE = "/lovable-uploads/92df31cc-3da1-4ac0-abdd-86b665018903.png";
 
 // External placeholder images with lower quality and optimized size
 const PLACEHOLDER_IMAGES = [
-  "https://images.unsplash.com/photo-1498936178812-4b2e558d2937?auto=format&q=50&w=240", // Low quality, smaller size
-  "https://images.unsplash.com/photo-1469041797191-50ace28483c3?auto=format&q=50&w=240"  // Low quality, smaller size
+  "https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&q=50&w=240", // Low quality, smaller size - clothing related
+  "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&q=50&w=240"  // Low quality, smaller size - fashion related
 ];
 
 const Results = () => {
   const { answers } = useSurvey();
   const { toast } = useToast();
   const [showingOffer, setShowingOffer] = useState(false);
-  const [giftCardImage, setGiftCardImage] = useState<string>(DOLLAR_TREE_GIFT_CARD_IMAGE);
+  const [giftCardImage, setGiftCardImage] = useState<string>(SHEIN_GIFT_CARD_IMAGE);
   const [imageLoaded, setImageLoaded] = useState(false);
   const isMobile = useIsMobile();
 
@@ -37,7 +37,7 @@ const Results = () => {
     
     // Set loading priority and src after attaching onload handler
     img.fetchPriority = "high";
-    img.src = DOLLAR_TREE_GIFT_CARD_IMAGE;
+    img.src = SHEIN_GIFT_CARD_IMAGE;
     
     // Shorter timeout for faster display fallback
     const timeout = setTimeout(() => {
@@ -61,7 +61,7 @@ const Results = () => {
         <>
           <SurveyHeader 
             title="Congratulations!" 
-            subtitle="Continue to the next step to receive your Dollar Tree Gift Card:"
+            subtitle="Continue to the next step to receive your $750 Shein Gift Card:"
             className="mb-4"
           />
           
@@ -74,7 +74,7 @@ const Results = () => {
                   ) : (
                     <img 
                       src={giftCardImage} 
-                      alt="Dollar Tree Gift Card" 
+                      alt="Shein Gift Card" 
                       className="rounded-md object-contain w-full h-full" 
                       loading="eager"
                       width={isMobile ? "280" : "300"}
@@ -94,10 +94,10 @@ const Results = () => {
               </div>
             </div>
             
-            {/* Green promotional text - improved mobile padding */}
-            <div className="text-center px-2 py-2 bg-green-50 rounded-lg border border-green-100">
-              <p className={`text-green-600 font-medium ${isMobile ? 'text-sm' : 'text-base'}`}>
-                Upgrade your shopping experience! A Dollar Tree Gift Card when you reach the end of the survey!
+            {/* Pink promotional text - improved mobile padding */}
+            <div className="text-center px-2 py-2 bg-pink-50 rounded-lg border border-pink-100">
+              <p className={`text-pink-600 font-medium ${isMobile ? 'text-sm' : 'text-base'}`}>
+                Upgrade your wardrobe with stylish fashion! Get a $750 Shein Gift Card when you reach the end of the survey!
               </p>
             </div>
           </div>
@@ -112,14 +112,14 @@ const Results = () => {
             >
               <Button 
                 className={`w-full py-6 text-lg ${isMobile ? 
-                  'shadow-lg bg-green-500 hover:bg-green-600 text-white font-bold border-2 border-white' : 
-                  'bg-green-600 hover:bg-green-700'} transition-colors duration-200`}
+                  'shadow-lg bg-pink-500 hover:bg-pink-600 text-white font-bold border-2 border-white uppercase tracking-wider' : 
+                  'bg-pink-600 hover:bg-pink-700'} transition-colors duration-200`}
               >
-                <span className={`${isMobile ? 'uppercase tracking-wider' : ''}`}>Continue</span>
+                Continue
               </Button>
             </a>
             {isMobile && (
-              <div className="absolute -inset-1 bg-green-100 rounded-lg -z-10 blur-sm opacity-70"></div>
+              <div className="absolute -inset-1 bg-pink-100 rounded-lg -z-10 blur-sm opacity-70"></div>
             )}
           </div>
           

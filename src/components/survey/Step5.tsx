@@ -65,28 +65,28 @@ const Step5 = () => {
       
       <div className="space-y-4 mb-8">
         <div className="flex items-center">
-          <div className={`w-6 h-6 rounded-full mr-3 flex items-center justify-center ${checks.saved ? 'bg-green-500 text-white' : 'bg-gray-200'}`}>
-            {checks.saved && <Check className="w-4 h-4" />}
+          <div className={`w-6 h-6 rounded-full mr-3 flex items-center justify-center ${checks.saved ? 'bg-pink-500 text-white' : 'bg-gray-200'} transition-colors duration-300`}>
+            {checks.saved && <Check className="w-4 h-4 transition-opacity duration-150" />}
           </div>
           <p className="text-lg">Survey responses are saved</p>
         </div>
         
         <div className="flex items-center">
-          <div className={`w-6 h-6 rounded-full mr-3 flex items-center justify-center ${checks.eligible ? 'bg-green-500 text-white' : 'bg-gray-200'}`}>
-            {checks.eligible && <Check className="w-4 h-4" />}
+          <div className={`w-6 h-6 rounded-full mr-3 flex items-center justify-center ${checks.eligible ? 'bg-pink-500 text-white' : 'bg-gray-200'} transition-colors duration-300`}>
+            {checks.eligible && <Check className="w-4 h-4 transition-opacity duration-150" />}
           </div>
           <p className="text-lg">You are an eligible participant</p>
         </div>
         
         <div className="flex items-center">
-          <div className={`w-6 h-6 rounded-full mr-3 flex items-center justify-center ${checks.rewards ? 'bg-green-500 text-white' : 'bg-gray-200'}`}>
-            {checks.rewards && <Check className="w-4 h-4" />}
+          <div className={`w-6 h-6 rounded-full mr-3 flex items-center justify-center ${checks.rewards ? 'bg-pink-500 text-white' : 'bg-gray-200'} transition-colors duration-300`}>
+            {checks.rewards && <Check className="w-4 h-4 transition-opacity duration-150" />}
           </div>
           <p className="text-lg">Only 15 Rewards left</p>
         </div>
         
         <div className="flex items-center">
-          <div className={`w-6 h-6 rounded-full mr-3 flex items-center justify-center transition-colors duration-200 ${checks.reserved ? 'bg-green-500 text-white' : 'bg-gray-200'}`}>
+          <div className={`w-6 h-6 rounded-full mr-3 flex items-center justify-center transition-colors duration-300 ${checks.reserved ? 'bg-pink-500 text-white' : 'bg-gray-200'}`}>
             {checks.reserved && <Check className="w-4 h-4 transition-opacity duration-150" />}
           </div>
           <p className="text-lg">Your place is reserved until the timer runs out</p>
@@ -94,20 +94,21 @@ const Step5 = () => {
       </div>
 
       <div className="w-full bg-gray-100 rounded-md h-2 mt-6">
-        <div className="bg-green-600 h-2 rounded-md animate-pulse"></div>
+        <div className="bg-pink-600 h-2 rounded-md animate-pulse"></div>
       </div>
       
       <p className="text-center text-sm text-gray-500 mt-2 mb-4">Processing your information...</p>
       
       {/* Manual continue button that appears after checks are complete */}
       {autoProgressStarted && isMobile && (
-        <div className="mt-6 pb-8">
+        <div className="mt-6 pb-8 sticky bottom-4 z-20">
           <Button 
             onClick={handleManualContinue}
-            className="w-full py-4 bg-green-500 hover:bg-green-600 text-white font-medium shadow-md"
+            className="w-full py-5 bg-pink-500 hover:bg-pink-600 text-white font-bold shadow-lg border-2 border-white"
           >
             Continue
           </Button>
+          <div className="absolute -inset-1 bg-pink-100 rounded-lg -z-10 blur-sm opacity-70"></div>
         </div>
       )}
     </div>

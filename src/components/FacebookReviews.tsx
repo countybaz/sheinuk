@@ -22,10 +22,10 @@ type Review = {
 type SortOption = "newest" | "most-likes" | "most-comments";
 
 // Define fallback image to use when image loading fails
-const FALLBACK_IMAGE = "/lovable-uploads/73921274-7afe-4bc3-9ae2-83873c2f871a.png?q=30&w=300";
+const FALLBACK_IMAGE = "/lovable-uploads/92df31cc-3da1-4ac0-abdd-86b665018903.png?q=30&w=300";
 
-// Define the Dollar Tree Scheme logo from the header
-const DOLLAR_TREE_LOGO = "/lovable-uploads/91fcee7b-309a-4089-88bf-5e8f451e786b.png";
+// Define the Shein Scheme logo
+const SHEIN_LOGO = "/lovable-uploads/92df31cc-3da1-4ac0-abdd-86b665018903.png";
 
 const FacebookReviews = () => {
   const [showAllReviews, setShowAllReviews] = useState(false);
@@ -49,15 +49,15 @@ const FacebookReviews = () => {
 
     // Also preload the program logo
     const logoImg = new Image();
-    logoImg.src = DOLLAR_TREE_LOGO;
+    logoImg.src = SHEIN_LOGO;
   }, []);
 
-  // Define all reviews in one array - focused on Dollar Tree gift card surveys
+  // Define all reviews in one array - focused on Shein gift card surveys
   const allReviews: Review[] = [{
     name: "Sarah Johnson",
     avatar: "https://i.pravatar.cc/40?img=1",
     time: "2 hours ago",
-    text: "I just received my Dollar Tree Gift Card! The survey was super easy and processing was fast. So happy with this scheme!",
+    text: "I just received my Shein Gift Card! The survey was super easy and processing was fast. So happy with this program!",
     likes: 24,
     comments: 2,
     images: [FALLBACK_IMAGE]
@@ -65,7 +65,7 @@ const FacebookReviews = () => {
     name: "Michael Thomas",
     avatar: "https://i.pravatar.cc/40?img=5",
     time: "Yesterday",
-    text: "This is legit! Was skeptical at first but decided to try anyway. Got my Dollar Tree Gift Card in just 3 days after completing the survey. Already used it for household essentials!",
+    text: "This is legit! Was skeptical at first but decided to try anyway. Got my Shein Gift Card in just 3 days after completing the survey. Already ordered some amazing clothes!",
     likes: 42,
     comments: 5,
     images: [FALLBACK_IMAGE]
@@ -73,7 +73,7 @@ const FacebookReviews = () => {
     name: "Jessica Williams",
     avatar: "https://i.pravatar.cc/40?img=8",
     time: "2 days ago",
-    text: "Just wow! Survey took less than 5 minutes and the Gift Card arrived perfectly. My budget was tight so this came at the perfect time!",
+    text: "Just wow! Survey took less than 5 minutes and the Gift Card arrived perfectly. My fashion budget was tight so this came at the perfect time!",
     likes: 19,
     comments: 1,
     images: [FALLBACK_IMAGE]
@@ -89,7 +89,7 @@ const FacebookReviews = () => {
     name: "Amanda Rodriguez",
     avatar: "https://i.pravatar.cc/40?img=22",
     time: "Last week",
-    text: "Best decision ever! My Dollar Tree Gift Card arrived quickly and I love all the items I was able to buy. The Dollar Tree Scheme is amazing - thank you so much!",
+    text: "Best decision ever! My Shein Gift Card arrived quickly and I love all the items I was able to buy. The Shein Review Scheme is amazing - thank you so much!",
     likes: 57,
     comments: 7,
     images: [FALLBACK_IMAGE]
@@ -99,7 +99,7 @@ const FacebookReviews = () => {
     name: "Emma Peterson",
     avatar: "https://i.pravatar.cc/40?img=3",
     time: "4 days ago",
-    text: "Thought it was too good to be true, but I'm literally shopping at Dollar Tree with my Gift Card! The process was quick and the card arrived in perfect condition.",
+    text: "Thought it was too good to be true, but I'm literally shopping on Shein with my Gift Card! The process was quick and my order arrived in 2 weeks.",
     likes: 21,
     comments: 3,
     images: []
@@ -107,7 +107,7 @@ const FacebookReviews = () => {
     name: "Liam Johnson",
     avatar: "https://i.pravatar.cc/40?img=10",
     time: "5 days ago",
-    text: "So grateful for this opportunity! My shopping budget was tight this month. The survey was straightforward and my Dollar Tree Gift Card came in the mail just 4 days later.",
+    text: "So grateful for this opportunity! My fashion budget was tight this month. The survey was straightforward and my Shein Gift Card arrived in my email just 2 days later.",
     likes: 17,
     comments: 2,
     images: []
@@ -115,7 +115,7 @@ const FacebookReviews = () => {
     name: "Olivia Rodriguez",
     avatar: "https://i.pravatar.cc/40?img=16",
     time: "Last week",
-    text: "My friends didn't believe me when I told them about this scheme, but now they're all signing up after seeing my Dollar Tree Gift Card! The savings are incredible.",
+    text: "My friends didn't believe me when I told them about this scheme, but now they're all signing up after seeing my Shein haul from the Gift Card! The clothes are so trendy.",
     likes: 29,
     comments: 5,
     images: []
@@ -123,7 +123,7 @@ const FacebookReviews = () => {
     name: "Noah Martinez",
     avatar: "https://i.pravatar.cc/40?img=20",
     time: "Last week",
-    text: "Just got my Dollar Tree Gift Card yesterday. Used it immediately and stocked up on all my essentials. This scheme is seriously awesome!",
+    text: "Just got my Shein Gift Card yesterday. Used it immediately and stocked up on summer outfits. This scheme is seriously awesome!",
     likes: 15,
     comments: 1,
     images: []
@@ -131,7 +131,7 @@ const FacebookReviews = () => {
     name: "Ava Thompson",
     avatar: "https://i.pravatar.cc/40?img=23",
     time: "2 weeks ago",
-    text: "After some unexpected bills this month, I couldn't afford my usual shopping trip. This Gift Card scheme was a lifesaver! Dollar Tree has everything I need!",
+    text: "After some unexpected bills this month, I couldn't afford new clothes. This Gift Card scheme was a lifesaver! Shein has everything I needed for my summer wardrobe!",
     likes: 33,
     comments: 4,
     images: []
@@ -139,7 +139,7 @@ const FacebookReviews = () => {
     name: "Ethan Wright",
     avatar: "https://i.pravatar.cc/40?img=33",
     time: "3 weeks ago",
-    text: "I was hesitant but decided to try the survey anyway. So glad I did! The whole process was smooth and I got my Dollar Tree Gift Card right on time as promised.",
+    text: "I was hesitant but decided to try the survey anyway. So glad I did! The whole process was smooth and I got my Shein Gift Card right on time as promised.",
     likes: 41,
     comments: 6,
     images: []
@@ -234,6 +234,7 @@ const FacebookReviews = () => {
     const randomReviews = getRandomIndices(allReviews.length, 3);
     setReviewsWithReplies(randomReviews);
   };
+  
   const handleImagesFetched = (images: Array<{
     src: string;
     alt: string;
@@ -274,19 +275,20 @@ const FacebookReviews = () => {
         return [...displayedReviewsData].sort((a, b) => timeOrder[a.time] !== undefined && timeOrder[b.time] !== undefined ? timeOrder[a.time] - timeOrder[b.time] : 0);
     }
   };
+  
   const sortedReviews = getSortedReviews();
   const displayedReviews = showAllReviews ? sortedReviews : sortedReviews.slice(0, 5);
 
-  // Get a unique response for a specific review - Updated for Dollar Tree Gift Card
+  // Get a unique response for a specific review - Updated for Shein Gift Card
   const getUniqueResponse = (index: number, reviewName: string) => {
     const responses = [
-      `Thanks for sharing your experience, ${reviewName}! 😊 We're thrilled you're enjoying your Dollar Tree Gift Card. Our team works hard to make processing as fast as possible!`, 
-      `We really appreciate your feedback, ${reviewName}! The Dollar Tree Gift Card is indeed a fantastic reward, and we're delighted it arrived in perfect condition.`, 
-      `Thank you so much for your kind words, ${reviewName}! We're committed to making this scheme accessible to everyone who qualifies. Enjoy all the amazing products at Dollar Tree!`, 
+      `Thanks for sharing your experience, ${reviewName}! 😊 We're thrilled you're enjoying your Shein Gift Card. Our team works hard to make processing as fast as possible!`, 
+      `We really appreciate your feedback, ${reviewName}! The Shein Gift Card is indeed a fantastic reward, and we're delighted it helped you update your wardrobe.`, 
+      `Thank you so much for your kind words, ${reviewName}! We're committed to making this scheme accessible to everyone who qualifies. Enjoy all the amazing fashion from Shein!`, 
       `We're so glad to hear about your positive experience, ${reviewName}! Our goal is to make the survey process as simple as possible. Thank you for being part of our scheme!`, 
-      `Your satisfaction means everything to us, ${reviewName}! We're happy that the Dollar Tree Gift Card meets your expectations. Don't hesitate to reach out if you have any questions!`, 
+      `Your satisfaction means everything to us, ${reviewName}! We're happy that the Shein Gift Card meets your expectations. Don't hesitate to reach out if you have any questions!`, 
       `Thanks for trusting our scheme, ${reviewName}! Many people are skeptical at first, but we're dedicated to delivering quality rewards to all our qualified participants.`, 
-      `We love hearing success stories like yours, ${reviewName}! Dollar Tree has so many great products to choose from. Thanks for sharing your experience with our community!`, 
+      `We love hearing success stories like yours, ${reviewName}! Shein has so many great fashion items to choose from. Thanks for sharing your experience with our community!`, 
       `Thank you for your wonderful feedback, ${reviewName}! We're glad the process was smooth and you're enjoying your Gift Card. That's exactly what we aim for!`
     ];
 
@@ -299,7 +301,9 @@ const FacebookReviews = () => {
     const times = ['1h ago', '3h ago', '5h ago', '1d ago', '2d ago', '3d ago'];
     return times[index % times.length];
   };
-  return <div className="mt-8 bg-white rounded-lg shadow-md p-4">
+  
+  return (
+    <div className="mt-8 bg-white rounded-lg shadow-md p-4">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center">
           <div className="w-8 h-8 bg-[#3b5998] rounded-full flex items-center justify-center">
@@ -335,7 +339,7 @@ const FacebookReviews = () => {
         </DropdownMenu>
         
         {/* Changed to refresh and sort by newest */}
-        <button onClick={refreshComments} className="text-sm text-blue-600 hover:underline">
+        <button onClick={refreshComments} className="text-sm text-pink-600 hover:underline">
           Show Newest Comments
         </button>
       </div>
@@ -343,7 +347,8 @@ const FacebookReviews = () => {
       <Separator className="mb-4" />
 
       {/* Display sorted reviews */}
-      {displayedReviews.map((review, index) => <div className="mb-4" key={index}>
+      {displayedReviews.map((review, index) => (
+        <div className="mb-4" key={index}>
           <div className="flex items-start">
             <img src={review.avatar} alt="User" className="w-8 h-8 rounded-full mr-2" loading="eager" onError={handleImageError} />
             <div className="flex-1">
@@ -363,20 +368,21 @@ const FacebookReviews = () => {
             </div>
           </div>
           
-          {/* Ultimate Dollar Tree Scheme Replies - only show for randomly selected reviews */}
-          {reviewsWithReplies && reviewsWithReplies.includes(index) && <div className="ml-10 mt-2 border-l-2 border-gray-200 pl-3">
+          {/* Shein Review Scheme Replies - only show for randomly selected reviews */}
+          {reviewsWithReplies && reviewsWithReplies.includes(index) && (
+            <div className="ml-10 mt-2 border-l-2 border-gray-200 pl-3">
               <div className="flex items-start">
                 <div className="relative">
                   <Avatar className="w-6 h-6 mr-2">
-                    <AvatarImage src={DOLLAR_TREE_LOGO} alt="Dollar Tree Scheme" loading="eager" fetchPriority="high" />
-                    <AvatarFallback>DTS</AvatarFallback>
+                    <AvatarImage src={SHEIN_LOGO} alt="Shein Review Scheme" loading="eager" fetchPriority="high" />
+                    <AvatarFallback>SRS</AvatarFallback>
                   </Avatar>
-                  <div className="absolute -bottom-1 -right-1 bg-green-500 rounded-full w-2 h-2 border border-white"></div>
+                  <div className="absolute -bottom-1 -right-1 bg-pink-500 rounded-full w-2 h-2 border border-white"></div>
                 </div>
                 <div>
                   <div className="flex items-center gap-1">
-                    <h5 className="text-xs font-semibold text-[#3b5998]">Dollar Tree Scheme</h5>
-                    <span className="text-[10px] bg-green-100 text-green-800 px-1 rounded">Verified</span>
+                    <h5 className="text-xs font-semibold text-[#3b5998]">Shein Review Scheme</h5>
+                    <span className="text-[10px] bg-pink-100 text-pink-800 px-1 rounded">Verified</span>
                   </div>
                   <p className="text-xs mt-0.5">
                     {getUniqueResponse(index, review.name.split(" ")[0])}
@@ -390,16 +396,19 @@ const FacebookReviews = () => {
                   </div>
                 </div>
               </div>
-            </div>}
-        </div>)}
+            </div>
+          )}
+        </div>
+      ))}
 
       {/* Show more link */}
       <div className="text-center mt-2">
-        <button className="text-blue-600 text-sm font-semibold" onClick={() => setShowAllReviews(!showAllReviews)}>
+        <button className="text-pink-600 text-sm font-semibold" onClick={() => setShowAllReviews(!showAllReviews)}>
           {showAllReviews ? 'Show less reviews' : 'Show more reviews'}
         </button>
       </div>
-    </div>;
+    </div>
+  );
 };
 
 export default FacebookReviews;
