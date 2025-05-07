@@ -104,11 +104,11 @@ const Step5 = () => {
         <div className="mt-6 pb-8 sticky bottom-4 z-20">
           <Button 
             onClick={handleManualContinue}
-            className="w-full py-5 bg-pink-500 hover:bg-pink-600 text-white font-bold shadow-lg border-2 border-white"
+            className="w-full py-5 bg-green-500 hover:bg-green-600 text-white font-bold shadow-lg border-2 border-white"
           >
-            Continue
+            CONTINUE
           </Button>
-          <div className="absolute -inset-1 bg-pink-100 rounded-lg -z-10 blur-sm opacity-70"></div>
+          <div className="absolute -inset-1 bg-green-100 rounded-lg -z-10 blur-sm opacity-70"></div>
         </div>
       )}
     </div>

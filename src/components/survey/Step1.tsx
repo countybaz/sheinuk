@@ -15,7 +15,7 @@ const Step1 = () => {
 
   const handleNext = () => {
     if (selected) {
-      setAnswer("us_resident", selected);
+      setAnswer("uk_resident", selected);
       
       if (selected === "no") {
         // Redirect to the standalone rejection page
@@ -34,8 +34,8 @@ const Step1 = () => {
       />
       
       <div className="mb-6">
-        <h2 className="text-lg font-medium mb-4">Do you live in the United States?</h2>
-        <p className="text-sm text-gray-600 mb-4">We are looking for participants from the US only</p>
+        <h2 className="text-lg font-medium mb-4">Do you live in the United Kingdom?</h2>
+        <p className="text-sm text-gray-600 mb-4">We are looking for participants from the UK only</p>
         <div className="space-y-3">
           <SurveyOption 
             label="Yes" 

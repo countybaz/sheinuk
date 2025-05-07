@@ -64,7 +64,7 @@ const FAQ = () => {
               WHAT ARE THE PARTICIPATION REQUIREMENTS?
             </AccordionTrigger>
             <AccordionContent className="text-gray-700">
-              You must be over 18 years old and live in the US.
+              You must be over 18 years old and live in the UK.
             </AccordionContent>
           </AccordionItem>
           
@@ -73,7 +73,7 @@ const FAQ = () => {
               WHAT CAN I GET FROM THIS PROGRAM?
             </AccordionTrigger>
             <AccordionContent className="text-gray-700">
-              By participating in this Program, you can receive a $750 Shein Gift Card to spend on their latest fashion collections. 
+              By participating in this Program, you can receive a £750 Shein Gift Card to spend on their latest fashion collections. 
               Shein offers trendy clothing, accessories, and home goods at amazing prices.
             </AccordionContent>
           </AccordionItem>

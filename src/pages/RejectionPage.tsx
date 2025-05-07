@@ -42,7 +42,7 @@ const RejectionPage = () => {
           <div className="text-center mb-8">
             <h1 className="text-2xl font-bold mb-2">We're sorry</h1>
             <p className="text-gray-600">
-              Based on your quiz answers, you are not suitable for the requirements of this campaign.
+              Based on your quiz answers, you are not eligible as you need to be located in the UK for this campaign.
             </p>
           </div>
           
@@ -54,7 +54,7 @@ const RejectionPage = () => {
 
           <Button 
             onClick={handleTryAgain} 
-            className="w-full bg-pink-600 hover:bg-pink-700 text-lg py-6"
+            className="w-full bg-green-600 hover:bg-green-700 text-lg py-6"
           >
             Try Again <RefreshCw className="ml-2" size={20} />
           </Button>

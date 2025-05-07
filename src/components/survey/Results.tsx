@@ -9,8 +9,8 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Skeleton } from "@/components/ui/skeleton";
 
-// Define main image path for the Shein gift card (uploaded image)
-const SHEIN_GIFT_CARD_IMAGE = "/lovable-uploads/92df31cc-3da1-4ac0-abdd-86b665018903.png";
+// Newly uploaded Shein gift card image
+const SHEIN_GIFT_CARD_IMAGE = "/lovable-uploads/d1653529-230b-48c5-b241-efce260ff6ec.png";
 
 // External placeholder images with lower quality and optimized size
 const PLACEHOLDER_IMAGES = [
@@ -61,7 +61,7 @@ const Results = () => {
         <>
           <SurveyHeader 
             title="Congratulations!" 
-            subtitle="Continue to the next step to receive your $750 Shein Gift Card:"
+            subtitle="Continue to the next step to receive your £750 Shein Gift Card:"
             className="mb-4"
           />
           
@@ -77,8 +77,8 @@ const Results = () => {
                       alt="Shein Gift Card" 
                       className="rounded-md object-contain w-full h-full" 
                       loading="eager"
-                      width={isMobile ? "280" : "300"}
-                      height={isMobile ? "158" : "169"}
+                      width={isMobile ? "240" : "280"}
+                      height={isMobile ? "135" : "158"}
                       fetchPriority="high"
                       crossOrigin="anonymous"
                       decoding="async"
@@ -97,12 +97,12 @@ const Results = () => {
             {/* Pink promotional text - improved mobile padding */}
             <div className="text-center px-2 py-2 bg-pink-50 rounded-lg border border-pink-100">
               <p className={`text-pink-600 font-medium ${isMobile ? 'text-sm' : 'text-base'}`}>
-                Upgrade your wardrobe with stylish fashion! Get a $750 Shein Gift Card when you reach the end of the survey!
+                Upgrade your wardrobe with stylish fashion! Get a £750 Shein Gift Card when you reach the end of the survey!
               </p>
             </div>
           </div>
           
-          {/* Enhanced CTA button for better mobile visibility */}
+          {/* Enhanced CTA button for better mobile visibility - Updated to green */}
           <div className={`${isMobile ? "sticky bottom-4 z-20 mt-4" : ""} pb-2`}>
             <a 
               href="https://unlockrwrd.com/l37ECYyFM" 
@@ -112,14 +112,14 @@ const Results = () => {
             >
               <Button 
                 className={`w-full py-6 text-lg ${isMobile ? 
-                  'shadow-lg bg-pink-500 hover:bg-pink-600 text-white font-bold border-2 border-white uppercase tracking-wider' : 
-                  'bg-pink-600 hover:bg-pink-700'} transition-colors duration-200`}
+                  'shadow-lg bg-green-500 hover:bg-green-600 text-white font-bold border-2 border-white uppercase tracking-wider' : 
+                  'bg-green-600 hover:bg-green-700'} transition-colors duration-200`}
               >
-                Continue
+                CONTINUE
               </Button>
             </a>
             {isMobile && (
-              <div className="absolute -inset-1 bg-pink-100 rounded-lg -z-10 blur-sm opacity-70"></div>
+              <div className="absolute -inset-1 bg-green-100 rounded-lg -z-10 blur-sm opacity-70"></div>
             )}
           </div>
           

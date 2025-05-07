@@ -10,8 +10,8 @@ interface ProductOfferProps {
   onClaim: () => void;
 }
 
-// Define guaranteed working fallback image
-const SHEIN_GIFT_CARD_IMAGE = "/lovable-uploads/92df31cc-3da1-4ac0-abdd-86b665018903.png";
+// Define new gift card image path
+const SHEIN_GIFT_CARD_IMAGE = "/lovable-uploads/d1653529-230b-48c5-b241-efce260ff6ec.png";
 // Additional fallback from Unsplash with optimized load time parameters
 const UNSPLASH_FALLBACK = "https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&q=50&w=300";
 
@@ -49,11 +49,11 @@ const ProductOffer = ({ onClaim }: ProductOfferProps) => {
           ) : null}
           <img 
             src={SHEIN_GIFT_CARD_IMAGE} 
-            alt="Shein $750 Gift Card" 
+            alt="Shein £750 Gift Card" 
             className={`w-full h-full object-contain rounded-md ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
             style={{ transition: 'opacity 0.1s' }} // Faster transition
-            width={isMobile ? "280" : "300"}
-            height={isMobile ? "160" : "192"}
+            width={isMobile ? "240" : "300"}
+            height={isMobile ? "135" : "169"}
             loading="eager"
             fetchPriority="high"
             crossOrigin="anonymous"
@@ -72,7 +72,7 @@ const ProductOffer = ({ onClaim }: ProductOfferProps) => {
       </div>
 
       <div className="mb-6">
-        <h4 className="font-bold text-lg mb-2">Shein $750 Gift Card</h4>
+        <h4 className="font-bold text-lg mb-2">Shein £750 Gift Card</h4>
         <div className="flex items-center mb-1">
           <Check className="h-4 w-4 text-pink-500 mr-2 flex-shrink-0" />
           <span className="text-gray-700">Valid on Shein's website and app</span>
@@ -89,8 +89,8 @@ const ProductOffer = ({ onClaim }: ProductOfferProps) => {
 
       <div className="mb-6 text-center">
         <div className="flex items-center justify-center">
-          <span className="text-gray-500 line-through text-lg mr-2">$750.00</span>
-          <span className="text-2xl font-bold text-pink-600">$0.00</span>
+          <span className="text-gray-500 line-through text-lg mr-2">£750.00</span>
+          <span className="text-2xl font-bold text-pink-600">£0.00</span>
         </div>
         <p className="text-pink-800 font-medium text-sm mt-1">+ FREE Delivery</p>
       </div>
@@ -101,14 +101,14 @@ const ProductOffer = ({ onClaim }: ProductOfferProps) => {
         <Button 
           onClick={onClaim} 
           className={`w-full py-6 text-lg ${isMobile ? 
-            'shadow-lg bg-pink-500 hover:bg-pink-600 text-white font-bold uppercase tracking-wider border-2 border-white' : 
-            'bg-pink-600 hover:bg-pink-700'} transition-colors duration-200`}
+            'shadow-lg bg-green-500 hover:bg-green-600 text-white font-bold uppercase tracking-wider border-2 border-white' : 
+            'bg-green-600 hover:bg-green-700'} transition-colors duration-200`}
         >
-          CLAIM NOW
+          CONTINUE
         </Button>
         
         {isMobile && (
-          <div className="absolute -inset-1 bg-pink-100 rounded-lg -z-10 blur-sm opacity-70"></div>
+          <div className="absolute -inset-1 bg-green-100 rounded-lg -z-10 blur-sm opacity-70"></div>
         )}
       </div>
 
